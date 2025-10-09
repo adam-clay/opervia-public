@@ -10,6 +10,8 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -18,10 +20,41 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Connect to webhook endpoint later
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const webhookUrl = import.meta.env.VITE_CONTACT_WEBHOOK_URL || 'https://notifications.opervia.com/v1/contact/webhook';
+
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          dealershipName: '',
+          locations: '',
+          phone: '',
+          email: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -34,6 +67,17 @@ const Contact = () => {
           </p>
 
           <form className="contact-form" onSubmit={handleSubmit}>
+            {submitStatus === 'success' && (
+              <div className="form-status success">
+                Thank you for your message! We'll get back to you soon.
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="form-status error">
+                Something went wrong. Please try again or contact us directly.
+              </div>
+            )}
+
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="name">Your Name:</label>
@@ -124,7 +168,9 @@ const Contact = () => {
               </div>
             </div>
 
-            <button type="submit" className="submit-btn">Submit</button>
+            <button type="submit" className="submit-btn" disabled={isSubmitting}>
+              {isSubmitting ? 'Submitting...' : 'Submit'}
+            </button>
           </form>
 
           <div className="social-icons">
