@@ -5,11 +5,13 @@ import SMSTerms from './components/SMSTerms';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import './App.scss';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app">
         <Navbar />
         <Routes>
