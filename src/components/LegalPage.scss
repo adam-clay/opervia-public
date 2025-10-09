@@ -1,0 +1,108 @@
+.legal-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 80px 20px 40px;
+  color: #ffffff;
+
+  .legal-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 40px;
+      text-align: center;
+      background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    .pdf-container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+      @media (max-width: 768px) {
+        padding: 10px;
+      }
+
+      object {
+        border-radius: 10px;
+        min-height: 600px;
+
+        @media (max-width: 768px) {
+          min-height: 400px;
+          height: 500px;
+        }
+      }
+
+      p {
+        color: #1a1a2e;
+        font-size: 1.1rem;
+        text-align: center;
+        padding: 40px;
+
+        a {
+          color: #0099ff;
+          text-decoration: none;
+          font-weight: 600;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .download-section {
+      text-align: center;
+      margin-bottom: 30px;
+
+      .download-btn {
+        display: inline-block;
+        padding: 15px 30px;
+        background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+      }
+    }
+
+    .back-link {
+      text-align: center;
+
+      a {
+        display: inline-block;
+        padding: 12px 25px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.15);
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}

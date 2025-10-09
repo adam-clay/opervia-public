@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.scss';
 
 const Footer = () => {
@@ -30,9 +31,11 @@ const Footer = () => {
             </p>
 
             <div className="footer-links">
-              <a href="#">PRIVACY POLICY</a>
+              <Link to="/privacy-policy">PRIVACY POLICY</Link>
               <span>|</span>
-              <a href="#">TERMS OF USE</a>
+              <Link to="/terms-of-service">TERMS OF USE</Link>
+              <span>|</span>
+              <Link to="/sms-terms">SMS TERMS</Link>
             </div>
           </div>
 
