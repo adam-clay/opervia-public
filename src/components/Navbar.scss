@@ -94,7 +94,11 @@ $green-hover: #129000;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  flex-shrink: 0;
 
   &:hover {
     background: rgba(255, 255, 255, 0.1);
@@ -121,6 +125,8 @@ $green-hover: #129000;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  flex-shrink: 0;
 
   &:hover {
     background: $green-hover;
@@ -131,7 +137,7 @@ $green-hover: #129000;
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 1rem;
+    padding: 1rem 0.75rem;
 
     &-menu {
       display: none;
@@ -139,20 +145,51 @@ $green-hover: #129000;
 
     &-logo {
       height: 32px;
+      flex-shrink: 1;
+      min-width: 0;
     }
 
     &-actions {
       gap: 0.5rem;
+      flex-shrink: 0;
     }
   }
 
   .btn-login {
     padding: 0.5rem 1rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    min-width: fit-content;
   }
 
   .btn-demo {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.85rem;
+    min-width: fit-content;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar {
+    padding: 0.75rem 0.5rem;
+
+    &-logo {
+      height: 28px;
+    }
+
+    &-actions {
+      gap: 0.4rem;
+    }
+  }
+
+  .btn-login {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.75rem;
+    min-width: fit-content;
+  }
+
+  .btn-demo {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    min-width: fit-content;
   }
 }
