@@ -15,7 +15,7 @@ const Pricing = () => {
     {
       name: 'Essential',
       monthlyPrice: '$299',
-      annualPrice: '$2870',
+      annualPrice: '$240',
       features: [
         'Advanced Service Package Form',
         'Multi-Year Agreements',
@@ -29,7 +29,7 @@ const Pricing = () => {
     {
       name: 'Professional AI',
       monthlyPrice: '$599',
-      annualPrice: '$5750',
+      annualPrice: '$479',
       features: [
         'Advanced Service Package Form',
         'Multi-Year Agreements',
@@ -44,7 +44,7 @@ const Pricing = () => {
     {
       name: 'Advanced AI',
       monthlyPrice: '$899',
-      annualPrice: '$8630',
+      annualPrice: '$720',
       features: [
         'Advanced Service Package Form',
         'Multi-Year Agreements',
@@ -85,7 +85,7 @@ const Pricing = () => {
                       Annual <span className="save">(SAVE 20%)</span>
                     </div>
                     <div className="price-amount">{plan.annualPrice}</div>
-                    <div className="price-period">per year/per location</div>
+                    <div className="price-period">per month/per location</div>
                   </div>
                 </>
               )}

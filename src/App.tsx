@@ -1,23 +1,28 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import HowItWorks from './components/HowItWorks';
-import Pricing from './components/Pricing';
-import Contact from './components/Contact';
+import Home from './components/Home';
+import SMSTerms from './components/SMSTerms';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import './App.scss';
 
 function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <Hero />
-      <About />
-      <HowItWorks />
-      <Pricing />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <ScrollToTop />
+      <div className="app">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sms-terms" element={<SMSTerms />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
