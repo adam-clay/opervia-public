@@ -92,7 +92,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2025 Copyright - Opervia LLC</p>
+          <p>&copy; {new Date().getFullYear()} Copyright - Opervia LLC</p>
         </div>
       </div>
     </footer>
