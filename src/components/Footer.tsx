@@ -46,11 +46,6 @@ const Footer = () => {
               <a href="mailto:support@opervia.com">support@opervia.com</a>
             </p>
 
-            <h3>Phone</h3>
-            <p>
-              <strong>SALES:</strong> <a href="tel:+18005555555">+1 (800) 555-5555</a><br/>
-              <strong>SUPPORT:</strong> <a href="tel:+18005555556">+1 (800) 555-5556</a>
-            </p>
           </div>
 
           <div className="footer-column footer-newsletter">

@@ -45,10 +45,9 @@ const SMSTerms = () => {
             For help or more information about our SMS program, text <strong>HELP</strong> to
             any message you receive from us. You can also contact us at:
           </p>
-          <ul>
-            <li>Email: <a href="mailto:support@opervia.com">support@opervia.com</a></li>
-            <li>Phone: <a href="tel:+18005555556">+1 (800) 555-5556</a></li>
-          </ul>
+          <p>
+            Email: <a href="mailto:support@opervia.com">support@opervia.com</a>
+          </p>
         </section>
 
         <section className="sms-section">
@@ -135,10 +134,9 @@ const SMSTerms = () => {
             If you have any questions about our SMS program, please don't hesitate to
             contact us:
           </p>
-          <ul>
-            <li>Email: <a href="mailto:support@opervia.com">support@opervia.com</a></li>
-            <li>Phone: <a href="tel:+18005555556">+1 (800) 555-5556</a></li>
-          </ul>
+          <p>
+            Email: <a href="mailto:support@opervia.com">support@opervia.com</a>
+          </p>
         </section>
 
         <div className="back-link">
