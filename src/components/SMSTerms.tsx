@@ -9,19 +9,33 @@ const SMSTerms = () => {
         <section className="sms-section">
           <h2>SMS Program Overview</h2>
           <p>
-            By opting in to receive SMS messages from Opervia, you agree to receive
-            recurring automated marketing and service messages from us at the mobile
-            number you provided. Consent is not a condition of purchase.
+            Opervia Parts Lookup is an SMS-based service that allows pre-approved
+            customers to check real-time part availability by texting a part number to
+            our dedicated phone number. You can also request to have parts pulled and
+            ready for pickup. By opting in to receive SMS messages from Opervia, you
+            agree to receive recurring automated service messages at the mobile number
+            you provided. Messages are only sent in direct response to your inquiries.
+            Consent is not a condition of purchase.
+          </p>
+        </section>
+
+        <section className="sms-section">
+          <h2>How to Opt In</h2>
+          <p>
+            An Opervia sales representative will introduce you to the SMS Parts Lookup
+            service and provide you with our dedicated phone number. To opt in, text the
+            keyword <strong>START</strong> to that number. You will receive a confirmation
+            message with service details and opt-out instructions.
           </p>
         </section>
 
         <section className="sms-section">
           <h2>Message Frequency</h2>
           <p>
-            Message frequency varies. You may receive appointment reminders, service
-            updates, promotional offers, and other communications related to Opervia
-            services. The number of messages you receive will depend on your interaction
-            with our platform and the services you use.
+            Message frequency varies based on your activity. Messages are only sent in
+            direct response to your part number inquiries and related follow-ups (e.g.,
+            pickup confirmations). No marketing, promotional, or unsolicited messages
+            are sent.
           </p>
         </section>
 
@@ -44,8 +58,8 @@ const SMSTerms = () => {
             any message you receive from us. After you send the message "STOP", we will
             send you an SMS message to confirm that you have been unsubscribed. After this,
             you will no longer receive SMS messages from us. If you want to join again,
-            just sign up as you did the first time and we will start sending SMS messages
-            to you again.
+            text <strong>START</strong> to our dedicated number and we will start sending
+            SMS messages to you again.
           </p>
         </section>
 
@@ -53,9 +67,9 @@ const SMSTerms = () => {
           <h2>Message & Data Rates</h2>
           <p>
             Message and data rates may apply for any messages sent to you from us and to
-            us from you. The number of messages you receive will vary, and you are
-            responsible for any charges from your mobile carrier. If you have any questions
-            about your text plan or data plan, contact your wireless provider.
+            us from you. You are responsible for any charges from your mobile carrier. If
+            you have any questions about your text plan or data plan, contact your wireless
+            provider.
           </p>
         </section>
 
@@ -110,7 +124,7 @@ const SMSTerms = () => {
             </div>
             <div className="compliance-item">
               <h3>Rates</h3>
-              <p>Message and data rates may apply</p>
+              <p>Msg & data rates may apply</p>
             </div>
           </div>
         </section>
