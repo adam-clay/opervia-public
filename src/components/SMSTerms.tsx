@@ -9,33 +9,34 @@ const SMSTerms = () => {
         <section className="sms-section">
           <h2>SMS Program Overview</h2>
           <p>
-            Opervia Parts Lookup is an SMS-based service that allows pre-approved
-            customers to check real-time part availability by texting a part number to
-            our dedicated phone number. You can also request to have parts pulled and
-            ready for pickup. By opting in to receive SMS messages from Opervia, you
-            agree to receive recurring automated service messages at the mobile number
-            you provided. Messages are only sent in direct response to your inquiries.
-            Consent is not a condition of purchase.
+            Opervia powers SMS communications on behalf of equipment dealerships and
+            service providers. When you interact with a dealership that uses Opervia,
+            you may receive SMS messages related to your service requests, parts
+            inquiries, and appointment updates. By opting in to receive SMS messages,
+            you agree to receive recurring automated service messages at the mobile
+            number you provided. Consent is not a condition of purchase.
           </p>
         </section>
 
         <section className="sms-section">
           <h2>How to Opt In</h2>
           <p>
-            An Opervia sales representative will introduce you to the SMS Parts Lookup
-            service and provide you with our dedicated phone number. To opt in, text the
-            keyword <strong>START</strong> to that number. You will receive a confirmation
-            message with service details and opt-out instructions.
+            You can opt in to receive SMS messages by checking the SMS consent checkbox
+            on the dealership's service request form (powered by Opervia). You may also
+            opt in by texting <strong>START</strong> to the dealership's dedicated phone
+            number. You will receive a confirmation message with service details and
+            opt-out instructions.
           </p>
         </section>
 
         <section className="sms-section">
-          <h2>Message Frequency</h2>
+          <h2>Message Types &amp; Frequency</h2>
           <p>
-            Message frequency varies based on your activity. Messages are only sent in
-            direct response to your part number inquiries and related follow-ups (e.g.,
-            pickup confirmations). No marketing, promotional, or unsolicited messages
-            are sent.
+            Message frequency varies based on your activity. Messages include service
+            status updates, parts availability responses, appointment reminders, and
+            pickup confirmations. Messages are only sent in direct response to your
+            service requests and related follow-ups. No marketing, promotional, or
+            unsolicited messages are sent.
           </p>
         </section>
 
