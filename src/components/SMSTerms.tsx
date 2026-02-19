@@ -11,8 +11,8 @@ const SMSTerms = () => {
           <p>
             Opervia powers SMS communications on behalf of equipment dealerships and
             service providers. When you interact with a dealership that uses Opervia,
-            you may receive SMS messages related to your service requests, parts
-            inquiries, and appointment updates. By opting in to receive SMS messages,
+            you may receive SMS messages related to your service requests and
+            appointment updates. By opting in to receive SMS messages,
             you agree to receive recurring automated service messages at the mobile
             number you provided. Consent is not a condition of purchase.
           </p>
@@ -33,9 +33,9 @@ const SMSTerms = () => {
           <h2>Message Types &amp; Frequency</h2>
           <p>
             Message frequency varies based on your activity. Messages include service
-            status updates, parts availability responses, appointment reminders, and
-            pickup confirmations. Messages are only sent in direct response to your
-            service requests and related follow-ups. No marketing, promotional, or
+            status updates, appointment reminders, and service completion alerts.
+            Messages are only sent in direct response to your service requests and
+            related follow-ups. No marketing, promotional, or
             unsolicited messages are sent.
           </p>
         </section>
