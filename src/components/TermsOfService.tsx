@@ -93,8 +93,7 @@ const TermsOfService = () => {
             <p>
               If you opt in to receive SMS messages through our platform, your use of the SMS
               service is additionally governed by our{' '}
-              <a href="/sms-terms" className="inline-link">SMS Terms & Compliance</a> page
-              at <a href="https://opervia.com/sms-terms" className="inline-link">https://opervia.com/sms-terms</a>.
+              <a href="/sms-terms" className="inline-link">SMS Terms & Compliance</a> page.
               By opting in to SMS messages, you agree to the terms outlined on that page,
               including message frequency, opt-out instructions, and data rates disclosure.
             </p>
