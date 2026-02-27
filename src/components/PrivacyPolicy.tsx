@@ -84,8 +84,7 @@ const PrivacyPolicy = () => {
               message. For help, reply <strong>HELP</strong> or contact us
               at <a href="mailto:support@opervia.com">support@opervia.com</a>. Message and data
               rates may apply. For full SMS terms, please see
-              our <a href="/sms-terms">SMS Terms &amp; Compliance</a> page
-              at <a href="https://opervia.com/sms-terms">https://opervia.com/sms-terms</a>.
+              our <a href="/sms-terms">SMS Terms &amp; Compliance</a> page.
             </p>
             <p>
               For more information about our general data practices, please review the rest of
