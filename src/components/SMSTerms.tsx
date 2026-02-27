@@ -10,23 +10,30 @@ const SMSTerms = () => {
           <h2>SMS Program Overview</h2>
           <p>
             Opervia powers SMS communications on behalf of equipment dealerships and
-            service providers. When you interact with a dealership that uses Opervia,
-            you may receive SMS messages related to your service requests and
-            appointment updates. By opting in to receive SMS messages,
-            you agree to receive recurring automated service messages at the mobile
+            service providers. Opervia operates two distinct SMS messaging services,
+            each with its own opt-in process. By opting in to either service,
+            you agree to receive recurring automated messages at the mobile
             number you provided. Consent is not a condition of purchase.
           </p>
         </section>
 
         <section className="sms-section">
-          <h2>How to Opt In</h2>
+          <h2>1. Parts Lookup SMS Service</h2>
           <p>
-            When submitting a service request or signing up for Parts Lookup through a
-            dealership's online form (powered by Opervia), you will see an SMS consent
-            checkbox. By checking this box, you expressly consent to receive recurring
-            automated SMS messages related to your service. The checkbox discloses the
-            brand name, message purpose, message frequency, data rates, STOP/HELP
-            instructions, and links to these <a href="/sms-terms">SMS Terms</a> and
+            The Parts Lookup SMS service allows customers to check real-time part
+            availability by texting a part number to a dedicated phone number. This
+            is a separate service from the Service Request Notifications described
+            below.
+          </p>
+          <h3>How to Opt In</h3>
+          <p>
+            When signing up for Parts Lookup through a dealership's online form
+            (powered by Opervia), you will see an SMS consent checkbox. By checking
+            this box, you expressly consent to receive recurring automated SMS
+            messages related to parts availability, stock checks, and pickup
+            notifications. The checkbox discloses the brand name, message purpose,
+            message frequency, data rates, STOP/HELP instructions, and links to
+            these <a href="/sms-terms">SMS Terms</a> and
             our <a href="/privacy-policy">Privacy Policy</a>.
           </p>
           <div className="opt-in-screenshot">
@@ -38,6 +45,39 @@ const SMSTerms = () => {
               SMS consent checkbox as displayed on the Parts Lookup sign-up form
             </p>
           </div>
+          <p>
+            <strong>Confirmation message:</strong> Upon opting in, you will receive an
+            automated confirmation message that includes the brand name (Opervia Parts
+            Lookup), a description of the service, message frequency disclosure, message
+            and data rates notice, and opt-out instructions (reply STOP to unsubscribe).
+          </p>
+          <h3>Message Types &amp; Frequency</h3>
+          <p>
+            Messages include part availability responses, stock confirmations, and
+            pickup notifications. Messages are only sent in direct response to your
+            inquiries. Message frequency varies based on your activity. No marketing,
+            promotional, or unsolicited messages are sent.
+          </p>
+        </section>
+
+        <section className="sms-section">
+          <h2>2. Service Request Notifications</h2>
+          <p>
+            The Service Request Notifications service sends SMS updates related to
+            your equipment service requests, including status updates, appointment
+            reminders, and service completion alerts. This is a separate service
+            from the Parts Lookup SMS service described above.
+          </p>
+          <h3>How to Opt In</h3>
+          <p>
+            When submitting a service request through a dealership's online form
+            (powered by Opervia), you will see an SMS consent checkbox. By checking
+            this box, you expressly consent to receive recurring automated SMS
+            messages related to your service request. The checkbox discloses the
+            brand name, message purpose, message frequency, data rates, STOP/HELP
+            instructions, and links to these <a href="/sms-terms">SMS Terms</a> and
+            our <a href="/privacy-policy">Privacy Policy</a>.
+          </p>
           <div className="opt-in-screenshot">
             <img
               src="/images/opervia_sms_screenshot.png"
@@ -47,23 +87,18 @@ const SMSTerms = () => {
               SMS consent checkbox as displayed on the dealership service request form
             </p>
           </div>
-
           <p>
             <strong>Confirmation message:</strong> Upon opting in, you will receive an
-            automated confirmation message that includes the brand name (Opervia Parts
-            Lookup), a description of the service, message frequency disclosure, message
-            and data rates notice, and opt-out instructions (reply STOP to unsubscribe).
+            automated confirmation message that includes the brand name, a description
+            of the service, message frequency disclosure, message and data rates notice,
+            and opt-out instructions (reply STOP to unsubscribe).
           </p>
-        </section>
-
-        <section className="sms-section">
-          <h2>Message Types &amp; Frequency</h2>
+          <h3>Message Types &amp; Frequency</h3>
           <p>
-            Message frequency varies based on your activity. Messages include service
-            status updates, appointment reminders, and service completion alerts.
-            Messages are only sent in direct response to your service requests and
-            related follow-ups. No marketing, promotional, or
-            unsolicited messages are sent.
+            Messages include service status updates, appointment reminders, and service
+            completion alerts. Messages are only sent in direct response to your service
+            requests and related follow-ups. Message frequency varies based on your
+            activity. No marketing, promotional, or unsolicited messages are sent.
           </p>
         </section>
 
