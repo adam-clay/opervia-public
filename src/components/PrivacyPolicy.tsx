@@ -55,7 +55,46 @@ const PrivacyPolicy = () => {
           </section>
 
           <section className="legal-section">
-            <h2>3. Sharing of Information</h2>
+            <h2>3. SMS/Text Messaging Privacy</h2>
+            <p>
+              When you opt in to receive SMS messages from Opervia or an Opervia-powered
+              dealership, we collect the following information:
+            </p>
+            <ul>
+              <li>Your mobile phone number</li>
+              <li>Your consent and opt-in records (including the method and timestamp of consent)</li>
+              <li>Message interaction data (delivery status, responses)</li>
+            </ul>
+            <p>
+              We use this information solely to deliver SMS messages related to parts availability,
+              service requests, and appointment updates that you have requested. Message frequency
+              varies based on your activity.
+            </p>
+            <p>
+              <strong>
+                We do not sell, rent, or share your SMS opt-in data or consent with any third
+                parties for their marketing or promotional purposes.
+              </strong>
+              {' '}We may share your information with trusted service providers (such as our SMS
+              delivery platform) who are contractually obligated to protect your data and use it
+              solely to provide messaging services on our behalf.
+            </p>
+            <p>
+              You can opt out of SMS messages at any time by replying <strong>STOP</strong> to any
+              message. For help, reply <strong>HELP</strong> or contact us
+              at <a href="mailto:support@opervia.com">support@opervia.com</a>. Message and data
+              rates may apply. For full SMS terms, please see
+              our <a href="/sms-terms">SMS Terms &amp; Compliance</a> page
+              at <a href="https://opervia.com/sms-terms">https://opervia.com/sms-terms</a>.
+            </p>
+            <p>
+              For more information about our general data practices, please review the rest of
+              this Privacy Policy.
+            </p>
+          </section>
+
+          <section className="legal-section">
+            <h2>4. Sharing of Information</h2>
             <p>We may share information only in the following circumstances:</p>
             <ul>
               <li>
@@ -73,7 +112,7 @@ const PrivacyPolicy = () => {
           </section>
 
           <section className="legal-section">
-            <h2>4. Data Security</h2>
+            <h2>5. Data Security</h2>
             <p>
               We use industry-standard safeguards (encryption, access controls, secure hosting) to protect
               your information. While no system can be guaranteed 100% secure, Opervia takes reasonable
@@ -82,16 +121,16 @@ const PrivacyPolicy = () => {
           </section>
 
           <section className="legal-section">
-            <h2>5. Data Retention</h2>
+            <h2>6. Data Retention</h2>
             <p>
               We retain information for as long as necessary to provide the Services, fulfill business purposes,
               or comply with legal obligations. You may request deletion of your data at any time (see Section
-              7 below).
+              8 below).
             </p>
           </section>
 
           <section className="legal-section">
-            <h2>6. Cookies & Tracking</h2>
+            <h2>7. Cookies & Tracking</h2>
             <p>Opervia may use cookies and similar technologies to:</p>
             <ul>
               <li>Maintain your login session.</li>
@@ -105,7 +144,7 @@ const PrivacyPolicy = () => {
           </section>
 
           <section className="legal-section">
-            <h2>7. Your Rights</h2>
+            <h2>8. Your Rights</h2>
             <p>
               Depending on your jurisdiction (e.g., GDPR in the EU, CCPA in California), you may have the
               right to:
@@ -120,7 +159,7 @@ const PrivacyPolicy = () => {
           </section>
 
           <section className="legal-section">
-            <h2>8. Third-Party Links</h2>
+            <h2>9. Third-Party Links</h2>
             <p>
               Our Services may include links to third-party websites or integrations. Opervia is not responsible
               for the privacy practices of those third parties.
@@ -128,7 +167,7 @@ const PrivacyPolicy = () => {
           </section>
 
           <section className="legal-section">
-            <h2>9. Children's Privacy</h2>
+            <h2>10. Children's Privacy</h2>
             <p>
               Opervia does not knowingly collect information from children under 13. If we learn that we have
               collected such data, we will delete it promptly.
@@ -136,7 +175,7 @@ const PrivacyPolicy = () => {
           </section>
 
           <section className="legal-section">
-            <h2>10. Changes to This Policy</h2>
+            <h2>11. Changes to This Policy</h2>
             <p>
               We may update this Privacy Policy periodically. The revised version will be posted on our
               website with a new effective date.
@@ -144,7 +183,7 @@ const PrivacyPolicy = () => {
           </section>
 
           <section className="legal-section">
-            <h2>11. Contact Us</h2>
+            <h2>12. Contact Us</h2>
             <p>For questions or concerns about this Privacy Policy, contact us at:</p>
             <div className="contact-info">
               <p><strong>Opervia</strong></p>

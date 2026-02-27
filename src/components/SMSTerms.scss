@@ -86,6 +86,25 @@ $green-hover: #129000;
         font-weight: 700;
       }
 
+      .opt-in-screenshot {
+        text-align: center;
+        margin: 1.5rem 0;
+
+        img {
+          max-width: 100%;
+          border: 1px solid #e0e0e0;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .screenshot-caption {
+          font-size: 0.875rem;
+          font-style: italic;
+          color: #888;
+          margin-top: 0.75rem;
+        }
+      }
+
       .policy-link {
         display: inline-block;
         margin-top: 1rem;

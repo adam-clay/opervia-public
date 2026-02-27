@@ -84,11 +84,23 @@ const TermsOfService = () => {
           </section>
 
           <section className="legal-section">
-            <h2>8. Data Security & Privacy</h2>
+            <h2>8. Data Security, Privacy & SMS Communications</h2>
             <p>
               Your use of Opervia is also governed by our{' '}
-              <a href="/privacy-policy" className="inline-link">Privacy Policy</a>, which explains how we collect,
-              use, and protect your information.
+              <a href="/privacy-policy" className="inline-link">Privacy Policy</a>, which explains how we
+              collect, use, and protect your information.
+            </p>
+            <p>
+              If you opt in to receive SMS messages through our platform, your use of the SMS
+              service is additionally governed by our{' '}
+              <a href="/sms-terms" className="inline-link">SMS Terms & Compliance</a> page
+              at <a href="https://opervia.com/sms-terms" className="inline-link">https://opervia.com/sms-terms</a>.
+              By opting in to SMS messages, you agree to the terms outlined on that page,
+              including message frequency, opt-out instructions, and data rates disclosure.
+            </p>
+            <p>
+              Consent to receive SMS messages is not a condition of purchase or use of any
+              Opervia service.
             </p>
           </section>
 
@@ -137,7 +149,7 @@ const TermsOfService = () => {
           <section className="legal-section">
             <h2>14. Governing Law</h2>
             <p>
-              These Terms are governed by the laws of the state of [Insert State], without regard to conflict of
+              These Terms are governed by the laws of the state of Delaware, without regard to conflict of
               law principles.
             </p>
           </section>

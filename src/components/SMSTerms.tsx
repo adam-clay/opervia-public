@@ -21,11 +21,45 @@ const SMSTerms = () => {
         <section className="sms-section">
           <h2>How to Opt In</h2>
           <p>
-            You can opt in to receive SMS messages by checking the SMS consent checkbox
-            on the dealership's service request form (powered by Opervia). You may also
-            opt in by texting <strong>START</strong> to the dealership's dedicated phone
-            number. You will receive a confirmation message with service details and
-            opt-out instructions.
+            There are two ways to opt in to receive SMS messages from Opervia on behalf
+            of your dealership:
+          </p>
+
+          <h3>Method 1 — Web Form Consent</h3>
+          <p>
+            When submitting a service request through a dealership's online form (powered
+            by Opervia), you will see an SMS consent checkbox. By checking this box, you
+            expressly consent to receive recurring automated SMS messages related to your
+            service request. The checkbox discloses the brand name, message purpose,
+            message frequency, data rates, STOP/HELP instructions, and links to
+            these <a href="/sms-terms">SMS Terms</a> and
+            our <a href="/privacy-policy">Privacy Policy</a>.
+          </p>
+          <div className="opt-in-screenshot">
+            <img
+              src="/images/opervia_sms_screenshot.png"
+              alt="Screenshot of the SMS consent checkbox on the dealership service request form, showing brand name, message purpose, frequency disclosure, data rates notice, STOP/HELP instructions, and links to SMS Terms and Privacy Policy"
+            />
+            <p className="screenshot-caption">
+              SMS consent checkbox as displayed on the dealership service request form
+            </p>
+          </div>
+
+          <h3>Method 2 — Keyword Opt-In</h3>
+          <p>
+            A dealership sales representative may introduce you to the Opervia Parts
+            Lookup service in person (e.g., at a parts counter or during a sales visit).
+            The representative provides the dedicated phone number and explains the
+            service. You opt in by texting the keyword <strong>START</strong> to that
+            number.
+          </p>
+
+          <p>
+            <strong>Confirmation message:</strong> Upon opting in via either method, you
+            will receive an automated confirmation message that includes the brand name
+            (Opervia Parts Lookup), a description of the service, message frequency
+            disclosure, message and data rates notice, and opt-out instructions (reply
+            STOP to unsubscribe).
           </p>
         </section>
 
@@ -85,11 +119,11 @@ const SMSTerms = () => {
         <section className="sms-section">
           <h2>Privacy & Data Sharing</h2>
           <p>
-            We respect your privacy. Mobile opt-in data will not be shared with third
-            parties for marketing purposes. Your information is collected and used in
-            accordance with our Privacy Policy. We will only use your mobile number to
-            send you the messages you've requested and for purposes outlined in our
-            Privacy Policy.
+            We respect your privacy. We do not sell, rent, or share your SMS opt-in data
+            or consent with any third parties for their marketing or promotional purposes.
+            Your information is collected and used in accordance with our Privacy Policy.
+            We will only use your mobile number to send you the messages you've requested
+            and for purposes outlined in our Privacy Policy.
           </p>
           <p>
             <a href="/privacy-policy" className="policy-link">View our Privacy Policy</a>
