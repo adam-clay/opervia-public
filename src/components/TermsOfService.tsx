@@ -159,7 +159,7 @@ const TermsOfService = () => {
             <div className="contact-info">
               <p><strong>Opervia</strong></p>
               <p>Email: support@opervia.com</p>
-              {/* <p>Phone: (800) 555-1234</p> */}
+              <p>Phone: <a href="tel:+18669422750">(866) 942-2750</a></p>
               {/* <p>Address: [Insert Company Address]</p> */}
             </div>
           </section>

@@ -111,6 +111,9 @@ const SMSTerms = () => {
           <p>
             Email: <a href="mailto:support@opervia.com">support@opervia.com</a>
           </p>
+          <p>
+            Phone: <a href="tel:+18669422750">(866) 942-2750</a>
+          </p>
         </section>
 
         <section className="sms-section">
@@ -198,6 +201,9 @@ const SMSTerms = () => {
           </p>
           <p>
             Email: <a href="mailto:support@opervia.com">support@opervia.com</a>
+          </p>
+          <p>
+            Phone: <a href="tel:+18669422750">(866) 942-2750</a>
           </p>
         </section>
 

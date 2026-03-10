@@ -46,6 +46,10 @@ const Footer = () => {
               <a href="mailto:support@opervia.com">support@opervia.com</a>
             </p>
 
+            <h3>Call Us</h3>
+            <p>
+              <a href="tel:+18669422750">(866) 942-2750</a>
+            </p>
           </div>
 
           <div className="footer-column footer-newsletter">
