@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'motion/react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './Footer.scss';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
+  const { ref, isInView } = useScrollAnimation();
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -12,7 +15,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer">
+    <motion.footer
+      ref={ref}
+      className="footer"
+      initial={{ opacity: 0 }}
+      animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <div className="footer-container">
         <div className="footer-main">
           <div className="footer-column footer-brand">
@@ -94,7 +103,7 @@ const Footer = () => {
           <p>&copy; {new Date().getFullYear()} Copyright - Opervia LLC</p>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

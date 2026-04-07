@@ -1,6 +1,4 @@
-$primary-blue: #1e3a5f;
-$primary-green: #16af00;
-$green-hover: #129000;
+@use '../styles/variables' as *;
 
 .hero {
   position: relative;
@@ -13,7 +11,7 @@ $green-hover: #129000;
 
   &-background {
     position: absolute;
-    top: 0;
+    top: -10%;
     left: 0;
     right: 0;
     bottom: 0;
@@ -40,7 +38,7 @@ $green-hover: #129000;
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, rgba(10, 25, 41, 0.7) 0%, rgba(30, 58, 95, 0.6) 50%, rgba(45, 90, 123, 0.7) 100%);
+      background: linear-gradient(135deg, rgba($blue-900, 0.85) 0%, rgba($blue-700, 0.7) 50%, rgba($blue-600, 0.8) 100%);
       z-index: 2;
     }
   }
@@ -54,46 +52,149 @@ $green-hover: #129000;
   }
 
   &-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
+    font-family: $font-display;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-weight: 400;
     margin-bottom: 1.5rem;
     line-height: 1.2;
-    letter-spacing: -0.02em;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 0.1em;
+
+    &-line {
+      display: block;
+    }
 
     .highlight {
-      color: white;
+      color: $green-400;
     }
   }
 
   &-subtitle {
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-family: $font-body;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
     font-weight: 300;
     margin-bottom: 3rem;
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 0.9);
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 
   &-btn {
-    background: $primary-green;
+    background: $green-500;
     color: white;
     border: none;
     padding: 1rem 3rem;
     border-radius: 30px;
-    font-size: 1.2rem;
+    font-family: $font-body;
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: 0 8px 20px rgba(22, 175, 0, 0.3);
+    box-shadow: 0 8px 30px rgba(22, 175, 0, 0.3);
+    letter-spacing: 0.02em;
 
     &:hover {
       background: $green-hover;
       transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(22, 175, 0, 0.4);
+      box-shadow: 0 12px 40px rgba(22, 175, 0, 0.45);
     }
   }
 }
 
+// Floating particles
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+
+  &--1 {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    top: 20%;
+    left: 15%;
+    animation: particleDrift1 25s ease-in-out infinite;
+  }
+
+  &--2 {
+    width: 12px;
+    height: 12px;
+    background: rgba($green-400, 0.12);
+    top: 60%;
+    left: 80%;
+    animation: particleDrift2 30s ease-in-out infinite;
+  }
+
+  &--3 {
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    top: 40%;
+    left: 60%;
+    animation: particleDrift3 22s ease-in-out infinite;
+  }
+
+  &--4 {
+    width: 14px;
+    height: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    top: 75%;
+    left: 25%;
+    animation: particleDrift1 35s ease-in-out infinite reverse;
+  }
+
+  &--5 {
+    width: 5px;
+    height: 5px;
+    background: rgba($green-400, 0.15);
+    top: 15%;
+    left: 70%;
+    animation: particleDrift2 28s ease-in-out infinite;
+  }
+
+  &--6 {
+    width: 10px;
+    height: 10px;
+    border: 1px solid rgba($green-400, 0.1);
+    top: 50%;
+    left: 40%;
+    animation: particleDrift3 32s ease-in-out infinite;
+  }
+}
+
+@keyframes particleDrift1 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(40px, -60px); }
+  50% { transform: translate(-30px, -30px); }
+  75% { transform: translate(20px, -80px); }
+}
+
+@keyframes particleDrift2 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-50px, -40px); }
+  50% { transform: translate(30px, -70px); }
+  75% { transform: translate(-20px, -20px); }
+}
+
+@keyframes particleDrift3 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(35px, -50px); }
+  66% { transform: translate(-45px, -25px); }
+}
+
+// Gradient overlay with subtle animation
 .gradient-overlay {
   position: absolute;
   top: 0;
@@ -102,8 +203,8 @@ $green-hover: #129000;
   bottom: 0;
   z-index: 3;
   background:
-    radial-gradient(circle at 20% 50%, rgba(22, 175, 0, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(0, 150, 255, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba($green-500, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 150, 255, 0.08) 0%, transparent 50%);
   animation: gradientShift 15s ease infinite;
   pointer-events: none;
 }
@@ -119,7 +220,23 @@ $green-hover: #129000;
   }
 }
 
-@media (max-width: 768px) {
+// Bottom divider
+.hero-divider {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  line-height: 0;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 80px;
+  }
+}
+
+@include mobile {
   .hero {
     min-height: 90vh;
 
@@ -129,7 +246,17 @@ $green-hover: #129000;
 
     &-btn {
       padding: 0.9rem 2.5rem;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
+  }
+
+  .hero-divider svg {
+    height: 40px;
+  }
+
+  // Hide some particles on mobile
+  .particle--4,
+  .particle--6 {
+    display: none;
   }
 }

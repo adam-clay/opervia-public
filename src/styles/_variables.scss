@@ -1,0 +1,54 @@
+// Brand colors
+$blue-900: #0a1929;
+$blue-800: #132f4c;
+$blue-700: #1e3a5f;
+$blue-600: #2d5a7b;
+$blue-100: #e3f2fd;
+
+$green-600: #129000;
+$green-500: #16af00;
+$green-400: #2ecc40;
+
+// Legacy aliases
+$primary-blue: $blue-700;
+$primary-green: $green-500;
+$green-hover: $green-600;
+
+// Neutrals
+$surface-light: #f8fafc;
+$text-primary: #1a1a2e;
+$text-secondary: #4a5568;
+
+// Breakpoints
+$bp-mobile: 768px;
+$bp-tablet: 968px;
+$bp-desktop: 1200px;
+
+// Typography
+$font-display: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+$font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+// Mixins
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $bp-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $bp-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop-down {
+  @media (max-width: $bp-desktop) {
+    @content;
+  }
+}

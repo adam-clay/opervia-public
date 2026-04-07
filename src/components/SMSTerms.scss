@@ -1,8 +1,5 @@
 @use "sass:color";
-
-$primary-blue: #1e3a5f;
-$primary-green: #16af00;
-$green-hover: #129000;
+@use '../styles/variables' as *;
 
 .sms-terms {
   min-height: 100vh;

@@ -1,39 +1,44 @@
 @use "sass:color";
-
-$primary-blue: #1e3a5f;
-$primary-green: #16af00;
+@use '../styles/variables' as *;
 
 .contact {
-  padding: 5rem 2rem;
+  padding: 7rem 2rem;
   background: $primary-blue;
+  position: relative;
+  overflow: hidden;
 
   &-container {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
   }
 
   &-form-wrapper {
     background: white;
     padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 
     h2 {
+      font-family: $font-display;
       font-size: 2.5rem;
       color: $primary-blue;
       margin-bottom: 1rem;
       text-align: center;
+      font-weight: 400;
     }
   }
 
   &-subtitle {
     text-align: center;
-    font-size: 1.125rem;
-    color: #666;
+    font-family: $font-body;
+    font-size: 1.1rem;
+    color: $text-secondary;
     margin-bottom: 2.5rem;
 
     .brand {
-      color: $primary-green;
+      color: $green-500;
       font-weight: 600;
     }
   }
@@ -42,8 +47,9 @@ $primary-green: #16af00;
 .contact-form {
   .form-status {
     padding: 1rem;
-    border-radius: 6px;
+    border-radius: 8px;
     margin-bottom: 1.5rem;
+    font-family: $font-body;
     font-size: 0.95rem;
     text-align: center;
 
@@ -76,8 +82,9 @@ $primary-green: #16af00;
     flex-direction: column;
 
     label {
-      font-size: 0.95rem;
-      color: #333;
+      font-family: $font-body;
+      font-size: 0.9rem;
+      color: $text-primary;
       margin-bottom: 0.5rem;
       font-weight: 500;
     }
@@ -86,15 +93,17 @@ $primary-green: #16af00;
     textarea,
     select {
       padding: 0.875rem;
-      border: 2px solid #e0e0e0;
-      border-radius: 6px;
+      border: 2px solid #e0e4e8;
+      border-radius: 8px;
       font-size: 1rem;
-      font-family: inherit;
-      transition: border-color 0.3s;
+      font-family: $font-body;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      background: $surface-light;
 
       &:focus {
         outline: none;
         border-color: $primary-blue;
+        box-shadow: 0 0 0 3px rgba($primary-blue, 0.1);
       }
     }
 
@@ -105,28 +114,29 @@ $primary-green: #16af00;
 
     select {
       cursor: pointer;
-      background: white;
     }
   }
 }
 
 .submit-btn {
   width: 100%;
-  background: $primary-green;
-  color: $primary-blue;
+  background: $green-500;
+  color: white;
   border: none;
   padding: 1rem 2rem;
   border-radius: 30px;
-  font-size: 1.125rem;
+  font-family: $font-body;
+  font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
   margin-top: 1rem;
+  letter-spacing: 0.02em;
 
   &:hover:not(:disabled) {
-    background: color.adjust($primary-green, $lightness: -10%);
+    background: color.adjust($green-500, $lightness: -10%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(22, 175, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(22, 175, 0, 0.35);
   }
 
   &:disabled {
@@ -141,12 +151,12 @@ $primary-green: #16af00;
   gap: 1.5rem;
   margin-top: 2.5rem;
   padding-top: 2rem;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #e8ecf0;
 }
 
 .social-icon {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -155,8 +165,8 @@ $primary-green: #16af00;
   color: white;
 
   svg {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
   }
 
   &.facebook {
@@ -196,9 +206,9 @@ $primary-green: #16af00;
   }
 }
 
-@media (max-width: 768px) {
+@include mobile {
   .contact {
-    padding: 3rem 1.5rem;
+    padding: 4rem 1.5rem;
 
     &-form-wrapper {
       padding: 2rem 1.5rem;
@@ -216,8 +226,8 @@ $primary-green: #16af00;
   }
 
   .social-icon {
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 44px;
 
     svg {
       width: 20px;

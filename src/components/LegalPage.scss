@@ -1,6 +1,5 @@
-$primary-blue: #1e3a5f;
-$primary-green: #16af00;
-$green-hover: #129000;
+@use "sass:color";
+@use '../styles/variables' as *;
 
 .legal-page {
   min-height: 100vh;
@@ -164,7 +163,7 @@ $green-hover: #129000;
         transition: background 0.3s ease;
 
         &:hover {
-          background: darken($primary-blue, 5%);
+          background: color.adjust($primary-blue, $lightness: -5%);
         }
       }
     }

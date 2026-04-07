@@ -1,10 +1,8 @@
 @use "sass:color";
-
-$primary-blue: #1e3a5f;
-$primary-green: #16af00;
+@use '../styles/variables' as *;
 
 .footer {
-  background: $primary-blue;
+  background: $blue-900;
   color: white;
   padding: 4rem 2rem 2rem;
 
@@ -22,10 +20,11 @@ $primary-green: #16af00;
 
   &-column {
     h3 {
+      font-family: $font-display;
       font-size: 1.125rem;
       margin-bottom: 1rem;
       margin-top: 1.5rem;
-      font-weight: 600;
+      font-weight: 400;
 
       &:first-child {
         margin-top: 0;
@@ -33,18 +32,19 @@ $primary-green: #16af00;
     }
 
     p {
+      font-family: $font-body;
       line-height: 1.8;
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.75);
       margin-bottom: 1rem;
     }
 
     a {
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.75);
       text-decoration: none;
       transition: color 0.3s;
 
       &:hover {
-        color: $primary-green;
+        color: $green-400;
       }
     }
   }
@@ -76,28 +76,30 @@ $primary-green: #16af00;
     font-size: 0.85rem;
 
     a {
-      color: $primary-green;
+      color: $green-400;
+      font-family: $font-body;
       font-weight: 600;
 
       &:hover {
-        color: color.adjust($primary-green, $lightness: 10%);
+        color: color.adjust($green-400, $lightness: 10%);
       }
     }
 
     span {
       margin: 0 0.75rem;
-      color: $primary-green;
+      color: $green-400;
     }
   }
 
   &-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 
     p {
       margin: 0;
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.5);
+      font-family: $font-body;
       font-size: 0.9rem;
     }
   }
@@ -109,83 +111,59 @@ $primary-green: #16af00;
   input {
     width: 100%;
     padding: 0.875rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.07);
     color: white;
+    font-family: $font-body;
     font-size: 0.95rem;
     transition: all 0.3s;
 
     &::placeholder {
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.4);
     }
 
     &:focus {
       outline: none;
-      border-color: $primary-green;
-      background: rgba(255, 255, 255, 0.15);
+      border-color: $green-400;
+      background: rgba(255, 255, 255, 0.1);
     }
   }
 }
 
-.social-icons {
+.footer .social-icons {
   display: flex;
   gap: 1rem;
 }
 
-.social-icon {
-  width: 45px;
-  height: 45px;
+.footer .social-icon {
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s;
   color: white;
+  background: rgba(255, 255, 255, 0.1);
 
   svg {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
   }
 
-  &.facebook {
-    background: #3b5998;
-
-    &:hover {
-      background: color.adjust(#3b5998, $lightness: -10%);
-      transform: translateY(-3px);
-    }
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
   }
 
-  &.youtube {
-    background: #ff0000;
-
-    &:hover {
-      background: color.adjust(#ff0000, $lightness: -10%);
-      transform: translateY(-3px);
-    }
-  }
-
-  &.twitter {
-    background: #1da1f2;
-
-    &:hover {
-      background: color.adjust(#1da1f2, $lightness: -10%);
-      transform: translateY(-3px);
-    }
-  }
-
-  &.linkedin {
-    background: #0077b5;
-
-    &:hover {
-      background: color.adjust(#0077b5, $lightness: -10%);
-      transform: translateY(-3px);
-    }
-  }
+  &.facebook:hover { background: #3b5998; }
+  &.youtube:hover { background: #ff0000; }
+  &.twitter:hover { background: #1da1f2; }
+  &.linkedin:hover { background: #0077b5; }
 }
 
-@media (max-width: 968px) {
+@include tablet {
   .footer {
     padding: 3rem 1.5rem 2rem;
 

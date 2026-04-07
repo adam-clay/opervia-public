@@ -1,10 +1,22 @@
-$primary-blue: #1e3a5f;
-$primary-green: #16af00;
+@use '../styles/variables' as *;
 
 .how-it-works {
-  padding: 5rem 2rem;
+  padding: 7rem 2rem;
   background: $primary-blue;
   color: white;
+  position: relative;
+
+  // Gradient transition from white section above
+  &::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, $primary-blue);
+    pointer-events: none;
+  }
 
   &-container {
     max-width: 1400px;
@@ -13,6 +25,8 @@ $primary-green: #16af00;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    position: relative;
+    z-index: 1;
   }
 
   &-content {
@@ -20,63 +34,94 @@ $primary-green: #16af00;
   }
 
   &-title {
-    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-family: $font-display;
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
     line-height: 1.3;
     margin-bottom: 2rem;
-    font-weight: 700;
+    font-weight: 400;
 
     em {
       font-style: italic;
-      font-weight: 300;
     }
 
     .highlight {
-      color: $primary-green;
+      color: $green-400;
     }
   }
 
   &-description {
-    font-size: 1.125rem;
+    font-family: $font-body;
+    font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 2.5rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.85);
   }
 
   &-image {
     img {
       width: 100%;
       height: auto;
-      border-radius: 8px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     }
   }
 }
 
 .features-list {
   h3 {
+    font-family: $font-display;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    font-weight: 600;
+    font-weight: 400;
   }
 }
 
 .feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
   margin-bottom: 1.25rem;
   line-height: 1.6;
 
+  .feature-number {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1.5px solid $green-400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-body;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: $green-400;
+    margin-top: 2px;
+  }
+
+  .feature-text {
+    flex: 1;
+  }
+
   .feature-title {
-    color: $primary-green;
+    color: $green-400;
+    font-family: $font-body;
     font-weight: 600;
   }
 
-  span {
-    color: rgba(255, 255, 255, 0.9);
+  .feature-desc {
+    color: rgba(255, 255, 255, 0.8);
   }
 }
 
-@media (max-width: 968px) {
+@include tablet {
   .how-it-works {
-    padding: 3rem 1.5rem;
+    padding: 4rem 1.5rem;
+
+    &::before {
+      top: -40px;
+      height: 40px;
+    }
 
     &-container {
       grid-template-columns: 1fr;

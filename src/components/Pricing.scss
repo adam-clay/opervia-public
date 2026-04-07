@@ -1,32 +1,90 @@
-$primary-blue: #1e3a5f;
-$primary-green: #16af00;
+@use '../styles/variables' as *;
 
 .pricing {
-  padding: 5rem 2rem;
-  background: #f8f9fa;
+  padding: 7rem 2rem;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba($green-500, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba($primary-blue, 0.04) 0%, transparent 50%),
+    $surface-light;
+  position: relative;
+
+  &-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    position: relative;
+    z-index: 1;
+
+    h2 {
+      font-family: $font-display;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: $primary-blue;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    p {
+      font-family: $font-body;
+      font-size: 1.15rem;
+      color: $text-secondary;
+    }
+  }
 
   &-container {
     max-width: 1400px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
   }
 }
 
 .pricing-card {
   background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: visible;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
+  position: relative;
+  border: 2px solid transparent;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    border-color: rgba($green-500, 0.3);
   }
+
+  &--popular {
+    border-color: $green-500;
+    box-shadow: 0 8px 30px rgba(22, 175, 0, 0.15);
+    transform: translateY(-8px);
+
+    &:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 16px 40px rgba(22, 175, 0, 0.2);
+    }
+  }
+}
+
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $green-500;
+  color: white;
+  padding: 0.35rem 1.25rem;
+  border-radius: 20px;
+  font-family: $font-body;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(22, 175, 0, 0.3);
 }
 
 .card-header {
@@ -34,10 +92,16 @@ $primary-green: #16af00;
   color: white;
   padding: 1.5rem;
   text-align: center;
+  border-radius: 10px 10px 0 0;
+
+  .pricing-card--popular & {
+    background: linear-gradient(135deg, $primary-blue, $blue-600);
+  }
 
   h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-family: $font-display;
+    font-size: 1.4rem;
+    font-weight: 400;
     margin: 0;
   }
 }
@@ -45,16 +109,17 @@ $primary-green: #16af00;
 .card-pricing {
   padding: 2rem 1.5rem;
   text-align: center;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e8ecf0;
   min-height: 260px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   .price-free {
+    font-family: $font-body;
     font-size: 3rem;
     font-weight: 700;
-    color: $primary-green;
+    color: $green-500;
   }
 
   .price-option {
@@ -66,27 +131,30 @@ $primary-green: #16af00;
   }
 
   .price-label {
+    font-family: $font-body;
     font-size: 0.9rem;
-    color: #666;
+    color: $text-secondary;
     margin-bottom: 0.5rem;
 
     .save {
-      color: $primary-green;
+      color: $green-500;
       font-weight: 600;
     }
   }
 
   .price-amount {
+    font-family: $font-body;
     font-size: 2.5rem;
     font-weight: 700;
-    color: $primary-green;
+    color: $green-500;
     line-height: 1;
     margin-bottom: 0.25rem;
   }
 
   .price-period {
+    font-family: $font-body;
     font-size: 0.85rem;
-    color: #666;
+    color: $text-secondary;
   }
 }
 
@@ -95,7 +163,8 @@ $primary-green: #16af00;
   flex: 1;
 
   h4 {
-    font-size: 1.25rem;
+    font-family: $font-body;
+    font-size: 1.1rem;
     color: $primary-blue;
     margin-bottom: 1rem;
     font-weight: 600;
@@ -107,11 +176,27 @@ $primary-green: #16af00;
     margin: 0;
 
     li {
-      padding: 0.75rem 0;
-      color: #333;
-      font-size: 0.95rem;
+      padding: 0.65rem 0;
+      padding-left: 1.5rem;
+      color: $text-primary;
+      font-family: $font-body;
+      font-size: 0.9rem;
       line-height: 1.4;
-      border-bottom: 1px solid #f0f0f0;
+      border-bottom: 1px solid #f0f2f5;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $green-500;
+        opacity: 0.6;
+      }
 
       &:last-child {
         border-bottom: none;
@@ -120,7 +205,7 @@ $primary-green: #16af00;
   }
 }
 
-@media (max-width: 1200px) {
+@include desktop-down {
   .pricing {
     &-container {
       grid-template-columns: repeat(2, 1fr);
@@ -128,12 +213,24 @@ $primary-green: #16af00;
   }
 }
 
-@media (max-width: 768px) {
+@include mobile {
   .pricing {
-    padding: 3rem 1.5rem;
+    padding: 4rem 1.5rem;
+
+    &-header {
+      margin-bottom: 3rem;
+    }
 
     &-container {
       grid-template-columns: 1fr;
+    }
+  }
+
+  .pricing-card--popular {
+    transform: none;
+
+    &:hover {
+      transform: translateY(-5px);
     }
   }
 }

@@ -1,0 +1,39 @@
+@use '../styles/variables' as *;
+
+.circuit-pattern {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.circuit-corner {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+
+  &--tl {
+    top: 0;
+    left: 0;
+  }
+
+  &--br {
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@include mobile {
+  .circuit-corner {
+    width: 200px;
+    height: 200px;
+    opacity: 0.6;
+  }
+}
+
+@include reduced-motion {
+  .circuit-pattern {
+    opacity: 0.5;
+  }
+}

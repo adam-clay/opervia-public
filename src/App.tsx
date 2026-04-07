@@ -21,6 +21,7 @@ function App() {
           <Route path="/terms-of-service" element={<TermsOfService />} />
         </Routes>
         <Footer />
+        <div className="noise-overlay" />
       </div>
     </Router>
   );
