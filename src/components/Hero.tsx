@@ -47,15 +47,16 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as const }}
           >
-            Smarter Service.
+
+            <span className="highlight">Smarter</span> Service.
           </motion.span>
           <motion.span
-            className="hero-title-line highlight"
+            className="hero-title-line"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] as const }}
           >
-            Stronger Dealerships.
+            <span className="highlight">Stronger</span> Dealerships.
           </motion.span>
         </h1>
         <motion.p
