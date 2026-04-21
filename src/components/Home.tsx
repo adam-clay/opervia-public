@@ -11,10 +11,11 @@ const Home = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Check if there's a scrollTo state from navigation
-    if (location.state && location.state.scrollTo) {
-      const sectionId = location.state.scrollTo;
-      // Wait a bit for the page to render, then scroll
+    const sectionId =
+      location.state?.scrollTo ??
+      (location.pathname === '/apply' ? 'contact' : null);
+
+    if (sectionId) {
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {

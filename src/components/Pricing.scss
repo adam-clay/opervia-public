@@ -41,6 +41,60 @@
   }
 }
 
+.pricing-toggle {
+  margin: 0 auto 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  background: #e9ecef;
+  border-radius: 999px;
+  padding: 0.35rem;
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+
+  &-option {
+    background: transparent;
+    color: $text-secondary;
+    border: none;
+    padding: 0.65rem 1.75rem;
+    border-radius: 999px;
+    font-family: $font-body;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .save {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: rgba($green-500, 0.15);
+      color: $green-500;
+    }
+
+    &.active {
+      background: $green-500;
+      color: white;
+      box-shadow: 0 4px 12px rgba(22, 175, 0, 0.3);
+
+      .save {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+      }
+    }
+
+    &:hover:not(.active) {
+      color: $text-primary;
+    }
+  }
+}
+
 .pricing-card {
   background: white;
   border-radius: 12px;
@@ -110,7 +164,7 @@
   padding: 2rem 1.5rem;
   text-align: center;
   border-bottom: 1px solid #e8ecf0;
-  min-height: 260px;
+  min-height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: center;

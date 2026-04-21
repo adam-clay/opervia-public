@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'motion/react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import AmbientShapes from './AmbientShapes';
@@ -31,7 +32,8 @@ const panelVariants = {
 };
 
 const Contact = () => {
-  const [tab, setTab] = useState<Tab>('contact');
+  const location = useLocation();
+  const [tab, setTab] = useState<Tab>(location.pathname === '/apply' ? 'application' : 'contact');
   const { ref: wrapperRef, isInView: wrapperInView } = useScrollAnimation();
 
   return (

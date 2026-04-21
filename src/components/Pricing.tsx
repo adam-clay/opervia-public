@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import CircuitPattern from './CircuitPattern';
@@ -83,6 +84,7 @@ const containerVariants = {
 const Pricing = () => {
   const { ref: headerRef, isInView: headerInView } = useScrollAnimation();
   const { ref: cardsRef, isInView: cardsInView } = useScrollAnimation();
+  const [isAnnual, setIsAnnual] = useState(true);
 
   return (
     <section id="pricing" className="pricing">
@@ -97,6 +99,27 @@ const Pricing = () => {
         <h2>Simple, Transparent Pricing</h2>
         <p>Start free. Scale as you grow. No hidden fees.</p>
       </motion.div>
+
+      <div className="pricing-toggle" role="tablist" aria-label="Billing period">
+        <button
+          type="button"
+          role="tab"
+          aria-selected={!isAnnual}
+          className={`pricing-toggle-option ${!isAnnual ? 'active' : ''}`}
+          onClick={() => setIsAnnual(false)}
+        >
+          Monthly
+        </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={isAnnual}
+          className={`pricing-toggle-option ${isAnnual ? 'active' : ''}`}
+          onClick={() => setIsAnnual(true)}
+        >
+          Annual <span className="save">SAVE 20%</span>
+        </button>
+      </div>
 
       <motion.div
         ref={cardsRef}
@@ -123,21 +146,11 @@ const Pricing = () => {
               {plan.price ? (
                 <div className="price-free">{plan.price}</div>
               ) : (
-                <>
-                  <div className="price-option">
-                    <div className="price-label">Monthly</div>
-                    <div className="price-amount">{plan.monthlyPrice}</div>
-                    <div className="price-period">per month/per location</div>
-                  </div>
-
-                  <div className="price-option">
-                    <div className="price-label">
-                      Annual <span className="save">(SAVE 20%)</span>
-                    </div>
-                    <div className="price-amount">{plan.annualPrice}</div>
-                    <div className="price-period">per month/per location</div>
-                  </div>
-                </>
+                <div className="price-option">
+                  <div className="price-label">{isAnnual ? 'Annual' : 'Monthly'}</div>
+                  <div className="price-amount">{isAnnual ? plan.annualPrice : plan.monthlyPrice}</div>
+                  <div className="price-period">per month/per location</div>
+                </div>
               )}
             </div>
 
