@@ -280,6 +280,26 @@
     }
   }
 
+  .pricing-toggle {
+    width: 100%;
+    max-width: 360px;
+    gap: 0.2rem;
+    padding: 0.3rem;
+
+    &-option {
+      flex: 1;
+      padding: 0.55rem 0.5rem;
+      font-size: 0.85rem;
+      justify-content: center;
+      gap: 0.35rem;
+
+      .save {
+        font-size: 0.6rem;
+        padding: 0.1rem 0.4rem;
+      }
+    }
+  }
+
   .pricing-card--popular {
     transform: none;
 
