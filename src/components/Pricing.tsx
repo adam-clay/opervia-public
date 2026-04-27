@@ -12,7 +12,6 @@ const plans = [
       'Simple Service Form',
       'Simple Scheduling',
       'User/Location Profiles',
-      'Expert Connect Integration'
     ]
   },
   {
