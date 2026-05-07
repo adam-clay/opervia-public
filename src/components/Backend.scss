@@ -1,0 +1,218 @@
+@use '../styles/variables' as *;
+
+.backend {
+  padding: 7rem 2rem;
+  background: $blue-800;
+  color: white;
+  position: relative;
+  overflow: hidden;
+
+  &-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  &-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &-title {
+    font-family: $font-display;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    font-weight: 400;
+    margin-bottom: 1rem;
+
+    .highlight {
+      color: $green-400;
+      font-weight: 600;
+    }
+  }
+
+  &-subtitle {
+    font-family: $font-body;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.78);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
+
+  &-integrations {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1.25rem 1.75rem;
+    border-radius: 14px;
+    background: rgba($green-400, 0.06);
+    border: 1px solid rgba($green-400, 0.22);
+
+    &-label {
+      font-family: $font-body;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: $green-400;
+      font-weight: 600;
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+  }
+
+  &-integration-badge {
+    font-family: $font-display;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    letter-spacing: 0.02em;
+  }
+
+  &-body {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 3.5rem;
+  }
+
+  &-features {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1.5rem;
+      row-gap: 0.95rem;
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-family: $font-body;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.88);
+    }
+  }
+
+  &-feature-marker {
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    margin-top: 0.55rem;
+    border-radius: 2px;
+    background: $green-400;
+    transform: rotate(45deg);
+    box-shadow: 0 0 8px rgba($green-400, 0.4);
+  }
+
+  &-image {
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 25px 65px rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  &-coming {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    &-label {
+      font-family: $font-body;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 600;
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    &-tag {
+      font-family: $font-body;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.85);
+      padding: 0.4rem 0.95rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px dashed rgba(255, 255, 255, 0.22);
+    }
+  }
+}
+
+@include tablet {
+  .backend {
+    padding: 5rem 1.5rem;
+
+    &-header {
+      margin-bottom: 3rem;
+    }
+
+    &-body {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    &-image {
+      order: 1;
+    }
+
+    &-features {
+      order: 2;
+
+      ul {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .backend {
+    padding: 4rem 1.25rem;
+
+    &-integrations {
+      padding: 1rem 1.25rem;
+    }
+
+    &-coming {
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+  }
+}
+
+@include reduced-motion {
+  .backend * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

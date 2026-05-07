@@ -1,0 +1,270 @@
+@use '../styles/variables' as *;
+
+.products {
+  padding: 7rem 2rem;
+  background: $surface-light;
+  color: $text-primary;
+  position: relative;
+
+  &-container {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  &-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  &-title {
+    font-family: $font-display;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    font-weight: 400;
+    margin-bottom: 1rem;
+
+    .highlight {
+      color: $primary-green;
+      font-weight: 600;
+    }
+  }
+
+  &-subtitle {
+    font-family: $font-body;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: $text-secondary;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+}
+
+.product-row {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 4rem;
+  align-items: center;
+
+  &--reversed {
+    .product-image {
+      order: 2;
+    }
+
+    .product-text {
+      order: 1;
+    }
+  }
+}
+
+.product-image {
+  &-frame {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: linear-gradient(135deg, $blue-100 0%, rgba($blue-100, 0.5) 60%, white 100%);
+    box-shadow:
+      0 1px 2px rgba(15, 30, 50, 0.05),
+      0 30px 60px rgba(15, 30, 50, 0.1);
+    border: 1px solid rgba($primary-blue, 0.07);
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      padding: 1.5rem;
+    }
+  }
+}
+
+.product-image-pair {
+  position: relative;
+  aspect-ratio: 4 / 3;
+
+  &__primary {
+    position: relative;
+    width: 86%;
+    height: 88%;
+    border-radius: 18px;
+    overflow: hidden;
+    background: linear-gradient(135deg, $blue-100 0%, rgba($blue-100, 0.5) 60%, white 100%);
+    box-shadow:
+      0 1px 2px rgba(15, 30, 50, 0.05),
+      0 30px 60px rgba(15, 30, 50, 0.1);
+    border: 1px solid rgba($primary-blue, 0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      padding: 1.25rem;
+    }
+  }
+
+  &__secondary {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 28%;
+    aspect-ratio: 9 / 17;
+    border-radius: 22px;
+    overflow: hidden;
+    background: linear-gradient(140deg, $blue-100 0%, rgba($blue-100, 0.6) 60%, white 100%);
+    box-shadow:
+      0 1px 2px rgba(15, 30, 50, 0.06),
+      0 25px 55px rgba(15, 30, 50, 0.18);
+    border: 1px solid rgba($primary-blue, 0.1);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      padding: 0.45rem;
+    }
+  }
+}
+
+.product-text {
+  .product-eyebrow {
+    display: inline-block;
+    font-family: $font-body;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $primary-green;
+    margin-bottom: 1rem;
+  }
+
+  .product-name {
+    font-family: $font-display;
+    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+    line-height: 1.25;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 1.25rem;
+  }
+
+  .product-description {
+    font-family: $font-body;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: $text-secondary;
+    margin-bottom: 1.75rem;
+  }
+
+  .product-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+
+    li {
+      font-family: $font-body;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: $primary-blue;
+      background: rgba($green-400, 0.1);
+      border: 1px solid rgba($primary-green, 0.2);
+      padding: 0.5rem 0.95rem;
+      border-radius: 999px;
+      line-height: 1.2;
+    }
+  }
+}
+
+@include tablet {
+  .products {
+    padding: 5rem 1.5rem;
+
+    &-header {
+      margin-bottom: 3.5rem;
+    }
+
+    &-list {
+      gap: 4rem;
+    }
+  }
+
+  .product-row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    &--reversed {
+      .product-image,
+      .product-text {
+        order: unset;
+      }
+    }
+
+    .product-image {
+      order: 1;
+    }
+
+    .product-text {
+      order: 2;
+    }
+  }
+
+  .product-image-frame {
+    aspect-ratio: 3 / 2;
+  }
+
+  .product-image-pair {
+    aspect-ratio: 3 / 2;
+
+    &__primary {
+      width: 82%;
+      height: 84%;
+    }
+
+    &__secondary {
+      width: 30%;
+    }
+  }
+}
+
+@include mobile {
+  .products {
+    padding: 4rem 1.25rem;
+  }
+
+  .product-text {
+    .product-highlights {
+      gap: 0.5rem;
+
+      li {
+        font-size: 0.82rem;
+        padding: 0.42rem 0.8rem;
+      }
+    }
+  }
+}
+
+@include reduced-motion {
+  .product-row * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

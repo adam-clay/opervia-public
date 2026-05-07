@@ -12,6 +12,7 @@ const plans = [
       'Simple Service Form',
       'Simple Scheduling',
       'User/Location Profiles',
+      'After-Hours Customer Routing',
     ]
   },
   {
@@ -19,13 +20,15 @@ const plans = [
     monthlyPrice: '$299',
     annualPrice: '$240',
     features: [
-      'Advanced Service Package Form',
+      'Smart Service Request Form',
       'Multi-Year Agreements',
       'Advanced Scheduling',
       'User/Location Profiles',
+      'IntelliDealer Integration',
       'Expert Connect Integration',
+      'Site Embed Codes / CSS Controls',
       'Hauling Management',
-      'Discount Management'
+      'Discount Management',
     ]
   },
   {
@@ -34,14 +37,19 @@ const plans = [
     annualPrice: '$479',
     popular: true,
     features: [
-      'Advanced Service Package Form',
+      'Smart Service Request Form',
       'Multi-Year Agreements',
       'Advanced Scheduling',
       'User/Location Profiles',
+      'IntelliDealer Integration',
       'Expert Connect Integration',
+      'Site Embed Codes / CSS Controls',
       'Hauling Management',
       'Discount Management',
-      'AI Diagnostics, Quoting & Repair'
+      'AI Diagnostics, Quoting & Repair',
+      'Workload Scheduling by Branch',
+      'Service Approval Workflows',
+      'Used Equipment Evaluator',
     ]
   },
   {
@@ -49,16 +57,23 @@ const plans = [
     monthlyPrice: '$899',
     annualPrice: '$720',
     features: [
-      'Advanced Service Package Form',
+      'Smart Service Request Form',
       'Multi-Year Agreements',
       'Advanced Scheduling',
       'User/Location Profiles',
+      'IntelliDealer Integration',
       'Expert Connect Integration',
+      'Site Embed Codes / CSS Controls',
       'Hauling Management',
       'Discount Management',
       'AI Diagnostics, Quoting & Repair',
+      'Workload Scheduling by Branch',
+      'Service Approval Workflows',
+      'Used Equipment Evaluator',
+      'AI Chat Agents (Web + Mobile)',
+      'Smart Parts Texting (AI Photo ID)',
+      'Parts OnSite Management System',
       'AI Voice Assistant',
-      'AI-Enabled - Webchat'
     ]
   }
 ];

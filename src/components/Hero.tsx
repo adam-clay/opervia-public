@@ -48,7 +48,7 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as const }}
           >
 
-            <span className="highlight">Smarter</span> Service.
+            <span className="highlight">Smarter</span> Operations.
           </motion.span>
           <motion.span
             className="hero-title-line"
@@ -65,7 +65,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
         >
-          AI-Powered Service Delivery
+          The AI-Powered Intake & Workflow Layer for Equipment Dealerships
         </motion.p>
         <motion.button
           className="hero-btn"
@@ -81,7 +81,7 @@ const Hero = () => {
       {/* Angled divider */}
       <div className="hero-divider">
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,100 L0,60 Q720,120 1440,60 L1440,100 Z" fill="#ffffff" />
+          <path d="M0,100 L0,60 Q720,120 1440,60 L1440,100 Z" fill="#132f4c" />
         </svg>
       </div>
     </section>

@@ -46,20 +46,22 @@ const About = () => {
           animate={contentInView ? 'visible' : 'hidden'}
         >
           <motion.h2 className="about-title" variants={itemVariants}>
-            Everything Your Dealership Service Department Needs — In{' '}
-            <span className="highlight">One Platform.</span>
+            One platform. Every dealership conversation. Across{' '}
+            <span className="highlight">Service, Parts, and Sales.</span>
           </motion.h2>
 
           <motion.div className="about-accent-line" variants={itemVariants} />
 
           <motion.p className="about-description" variants={itemVariants}>
-            <strong>OPERVIA</strong> is an all-in-one software platform built for
-            equipment dealerships to streamline service quoting, team
-            collaboration, customer engagement, and marketing. By
-            centralizing operations into one easy-to-use system and
-            leveraging the power and automation of AI, it helps
-            dealerships save time, reduce costs, and strengthen
-            customer relationships.
+            <strong>OPERVIA</strong> is the AI-powered intake and workflow layer for
+            equipment dealerships. It captures every customer inquiry —
+            phone, form, text, or chat — qualifies the need with
+            dealership-specific logic, and routes the right work to
+            Service, Parts, or Sales with the data your team needs to
+            act. Built for the realities of modern dealerships and
+            integrated with the systems you already run, OPERVIA turns
+            missed calls into closed work orders and scattered leads
+            into structured opportunity.
           </motion.p>
         </motion.div>
       </div>
