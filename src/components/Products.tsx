@@ -32,7 +32,6 @@ const products: Product[] = [
     description:
       'AI chat agents deployed across every department, working together. Embedded directly into your dealership website and mobile-ready out of the box. Trained on your locations, inventory, and service capabilities.',
     highlights: [
-      'Cross-department handoff',
       'Web + mobile native',
       'Trained on your inventory',
       'Routes to live staff seamlessly',

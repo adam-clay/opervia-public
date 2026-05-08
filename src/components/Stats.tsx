@@ -52,7 +52,7 @@ const Stats = () => {
 
   return (
     <section id="stats" className="stats">
-      <ParallaxBackdrop image="/images/dealershipbg.png" tint="dark" />
+      <ParallaxBackdrop image="/images/dealershipbg.png" tint="mid" />
       <AmbientShapes variant="dark" count={8} />
 
       <div className="stats-container">

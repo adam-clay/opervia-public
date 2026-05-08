@@ -17,6 +17,7 @@ const features = [
 ];
 
 const comingSoon = [
+  'Call-Based Voice Agent',
   'Stripe Payments',
   'Social Media · Text · Email Marketing',
 ];
@@ -95,10 +96,10 @@ const Backend = () => {
           <motion.div
             ref={imageRef}
             className="backend-image"
-            initial={{ opacity: 0, scale: 0.92, y: 40 }}
+            initial={{ opacity: 0, scale: 0.92 }}
             animate={imageInView
-              ? { opacity: 1, scale: 1, y: 0 }
-              : { opacity: 0, scale: 0.92, y: 40 }
+              ? { opacity: 1, scale: 1 }
+              : { opacity: 0, scale: 0.92 }
             }
             transition={{ duration: 0.85, ease: [0.25, 0.46, 0.45, 0.94] as const }}
           >

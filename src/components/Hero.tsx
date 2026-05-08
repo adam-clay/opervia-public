@@ -9,8 +9,8 @@ const Hero = () => {
     offset: ['start start', 'end start'],
   });
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-  const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '55%']);
+  const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '85%']);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   const scrollToContact = () => {

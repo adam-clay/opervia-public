@@ -39,7 +39,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="contact">
-      <ParallaxBackdrop image="/images/dealershipbg.png" tint="dark" />
+      <ParallaxBackdrop image="/images/dealershipbg.png" tint="mid" />
       <AmbientShapes variant="dark" count={4} />
 
       <div className="contact-container">

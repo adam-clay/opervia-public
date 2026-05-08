@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import CircuitPattern from './CircuitPattern';
+import ParallaxBackdrop from './ParallaxBackdrop';
 import './HowItWorks.scss';
 
 const bullets = [
@@ -32,6 +33,7 @@ const HowItWorks = () => {
 
   return (
     <section id="how-it-works" className="how-it-works">
+      <ParallaxBackdrop image="/images/dealershipbg.png" tint="dark" />
       <CircuitPattern variant="dark" />
 
       <div className="how-it-works-container">
@@ -64,10 +66,10 @@ const HowItWorks = () => {
         <motion.div
           ref={imageRef}
           className="intake-flow"
-          initial={{ opacity: 0, scale: 0.94, y: 30 }}
+          initial={{ opacity: 0, scale: 0.94 }}
           animate={imageInView
-            ? { opacity: 1, scale: 1, y: 0 }
-            : { opacity: 0, scale: 0.94, y: 30 }
+            ? { opacity: 1, scale: 1 }
+            : { opacity: 0, scale: 0.94 }
           }
           transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] as const }}
         >
