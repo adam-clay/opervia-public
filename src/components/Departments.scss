@@ -81,6 +81,21 @@
       0 18px 50px rgba(15, 30, 50, 0.1);
   }
 
+  .department-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .department-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
   .department-name {
     font-family: $font-display;
     font-size: 1.6rem;
@@ -88,7 +103,7 @@
     color: $primary-green;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin: 0;
   }
 
   .department-divider {

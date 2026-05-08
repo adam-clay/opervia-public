@@ -4,12 +4,14 @@ import './Departments.scss';
 
 interface Department {
   name: string;
+  icon: string;
   capabilities: string[];
 }
 
 const departments: Department[] = [
   {
     name: 'Service',
+    icon: '/images/serviceicon.png',
     capabilities: [
       'Appointment Requests',
       'Service Packages',
@@ -24,6 +26,7 @@ const departments: Department[] = [
   },
   {
     name: 'Parts',
+    icon: '/images/partsicon.png',
     capabilities: [
       'Parts Identification',
       'Inventory & Availability',
@@ -35,6 +38,7 @@ const departments: Department[] = [
   },
   {
     name: 'Sales',
+    icon: '/images/saleicon.png',
     capabilities: [
       'Wholegoods Interest',
       'Model Qualification',
@@ -98,7 +102,10 @@ const Departments = () => {
         >
           {departments.map((dept) => (
             <motion.div key={dept.name} className="department-card" variants={columnVariants}>
-              <h3 className="department-name">{dept.name}</h3>
+              <div className="department-header">
+                <img src={dept.icon} alt="" className="department-icon" aria-hidden="true" />
+                <h3 className="department-name">{dept.name}</h3>
+              </div>
               <div className="department-divider" />
               <ul className="department-capabilities">
                 {dept.capabilities.map((cap) => (
