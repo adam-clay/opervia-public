@@ -71,13 +71,11 @@ const HowItWorks = () => {
           }
           transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] as const }}
         >
-          <div className="intake-flow-frame">
-            <img
-              src="/images/flowchart.png"
-              alt="Opervia captures inquiries from phone, form, chat, and SMS, then routes them to the right team in your dealership."
-              loading="lazy"
-            />
-          </div>
+          <img
+            src="/images/workflow.png"
+            alt="Opervia connects every customer touchpoint — phone, chat, mobile, email — to every dealership team: parts, service, sales, and support."
+            loading="lazy"
+          />
         </motion.div>
       </div>
 

@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import CountUp from './CountUp';
 import AmbientShapes from './AmbientShapes';
+import ParallaxBackdrop from './ParallaxBackdrop';
 import './Stats.scss';
 
 interface Stat {
@@ -51,6 +52,7 @@ const Stats = () => {
 
   return (
     <section id="stats" className="stats">
+      <ParallaxBackdrop image="/images/dealershipbg.png" tint="dark" />
       <AmbientShapes variant="dark" count={8} />
 
       <div className="stats-container">

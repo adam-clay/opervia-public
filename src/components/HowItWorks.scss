@@ -158,16 +158,10 @@
   width: 100%;
   position: relative;
 
-  &-frame {
-    position: relative;
-    overflow: hidden;
-
-    img {
-      display: block;
-      width: 100%;
-      margin: -2.5% 0;
-      height: auto;
-    }
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 }
 

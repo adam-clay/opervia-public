@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'motion/react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import AmbientShapes from './AmbientShapes';
+import ParallaxBackdrop from './ParallaxBackdrop';
 import ContactForm from './ContactForm';
 import ApplicationForm from './ApplicationForm';
 import './Contact.scss';
@@ -38,6 +39,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="contact">
+      <ParallaxBackdrop image="/images/dealershipbg.png" tint="dark" />
       <AmbientShapes variant="dark" count={4} />
 
       <div className="contact-container">

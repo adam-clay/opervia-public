@@ -102,7 +102,11 @@ const Backend = () => {
             }
             transition={{ duration: 0.85, ease: [0.25, 0.46, 0.45, 0.94] as const }}
           >
-            <img src="/images/computerscreen.png" alt="Opervia dashboard interface showing service workflow" loading="lazy" />
+            <img
+              src="/images/laptop-diagnostics.png"
+              alt="Opervia AI Diagnostic Quote — completed work-order quote with parts cost, time estimate, likely cause, and best-case outcome"
+              loading="lazy"
+            />
           </motion.div>
         </div>
 

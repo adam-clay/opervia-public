@@ -9,8 +9,6 @@ interface Product {
   highlights: string[];
   image: string;
   imageAlt: string;
-  secondaryImage?: string;
-  secondaryImageAlt?: string;
 }
 
 const products: Product[] = [
@@ -39,10 +37,8 @@ const products: Product[] = [
       'Trained on your inventory',
       'Routes to live staff seamlessly',
     ],
-    image: '/images/product-chat-agents-web.png',
-    imageAlt: 'Atlantic Tractor chat agent embedded on the dealer website',
-    secondaryImage: '/images/product-chat-agents-mobile.png',
-    secondaryImageAlt: 'Opervia chat agent on a mobile phone',
+    image: '/images/product-chat-agents.png',
+    imageAlt: 'Opervia chat agent embedded on a dealership website laptop and the same agent on a mobile phone',
   },
   {
     eyebrow: 'AI Photo & SMS',
@@ -55,38 +51,24 @@ const products: Product[] = [
       'Pricing & discount logic',
       'Pickup scheduling',
     ],
-    image: '/images/opervia_parts_lookup_sms_screenshot.png',
-    imageAlt: 'Smart Parts Texting conversation showing photo-based part identification',
+    image: '/images/parttexting.png',
+    imageAlt: 'A customer in the field texts a photo of a tractor part; the AI replies with the part identified, price, and pickup details',
   },
 ];
 
 const ProductRow = ({ product, index }: { product: Product; index: number }) => {
   const { ref, isInView } = useScrollAnimation();
   const reversed = index % 2 === 1;
-  const isComposite = Boolean(product.secondaryImage);
 
   return (
     <div ref={ref} className={`product-row ${reversed ? 'product-row--reversed' : ''}`}>
       <motion.div
-        className={`product-image ${isComposite ? 'product-image--composite' : ''}`}
+        className="product-image"
         initial={{ opacity: 0, x: reversed ? 60 : -60 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: reversed ? 60 : -60 }}
         transition={{ duration: 0.85, ease: [0.25, 0.46, 0.45, 0.94] as const }}
       >
-        {isComposite ? (
-          <div className="product-image-pair">
-            <div className="product-image-pair__primary">
-              <img src={product.image} alt={product.imageAlt} loading="lazy" />
-            </div>
-            <div className="product-image-pair__secondary">
-              <img src={product.secondaryImage} alt={product.secondaryImageAlt ?? ''} loading="lazy" />
-            </div>
-          </div>
-        ) : (
-          <div className="product-image-frame">
-            <img src={product.image} alt={product.imageAlt} loading="lazy" />
-          </div>
-        )}
+        <img src={product.image} alt={product.imageAlt} loading="lazy" />
       </motion.div>
 
       <motion.div
