@@ -1,0 +1,98 @@
+@use '../styles/variables' as *;
+
+.parallax-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+
+  // Fade the parallax layer (image + tint together) into the section's
+  // own solid bg at the top and bottom edges, so the SectionDivider
+  // arcs land on a flat color instead of the textured dealership image.
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black 110px,
+    black calc(100% - 110px),
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black 110px,
+    black calc(100% - 110px),
+    transparent 100%
+  );
+
+  @include mobile {
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      black 70px,
+      black calc(100% - 70px),
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      black 70px,
+      black calc(100% - 70px),
+      transparent 100%
+    );
+  }
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    background-image: var(--backdrop-image);
+    background-size: cover;
+    background-position: var(--backdrop-position, center);
+    background-repeat: no-repeat;
+    // Pin the image to the viewport. The element scrolls with its
+    // section but the painted image stays put, so content overlays a
+    // motionless backdrop and the next section "takes over" when this
+    // one scrolls past.
+    background-attachment: fixed;
+
+    // iOS Safari (and most touch browsers) ignore background-attachment:
+    // fixed and fall back to scroll, which would make the image scroll
+    // with the section. Force scroll on touch devices to keep behaviour
+    // predictable and avoid layout jank.
+    @media (hover: none) and (pointer: coarse) {
+      background-attachment: scroll;
+    }
+  }
+
+  &__tint {
+    position: absolute;
+    inset: 0;
+
+    &--light {
+      background: linear-gradient(
+        135deg,
+        rgba($blue-900, 0.42) 0%,
+        rgba($blue-800, 0.36) 50%,
+        rgba($blue-700, 0.42) 100%
+      );
+    }
+
+    &--mid {
+      background: linear-gradient(
+        135deg,
+        rgba($blue-900, 0.62) 0%,
+        rgba($blue-800, 0.56) 50%,
+        rgba($blue-700, 0.6) 100%
+      );
+    }
+
+    &--dark {
+      background: linear-gradient(
+        135deg,
+        rgba($blue-900, 0.85) 0%,
+        rgba($blue-800, 0.78) 50%,
+        rgba($blue-700, 0.82) 100%
+      );
+    }
+  }
+}
