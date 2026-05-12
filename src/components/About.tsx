@@ -54,8 +54,8 @@ const About = () => {
 
           <motion.p className="about-description" variants={itemVariants}>
             <strong>OPERVIA</strong> is the AI-powered intake and workflow layer for
-            equipment dealerships. It captures every customer inquiry —
-            phone, form, text, or chat — qualifies the need with
+            equipment dealerships. It captures every customer inquiry,
+            phone, form, text, or chat, qualifies the need with
             dealership-specific logic, and routes the right work to
             Service, Parts, or Sales with the data your team needs to
             act. Built for the realities of modern dealerships and

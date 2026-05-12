@@ -106,7 +106,7 @@ const Products = () => {
             Three Products. <span className="highlight">One Workflow.</span>
           </h2>
           <p className="products-subtitle">
-            Built for how customers actually reach equipment dealerships today — and the realities of running a service department, parts counter, or sales floor.
+            Built for how customers actually reach equipment dealerships today, and the realities of running a service department, parts counter, or sales floor.
           </p>
         </motion.div>
 

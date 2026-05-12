@@ -25,7 +25,7 @@ const internetStats: Stat[] = [
 ];
 
 const punchlines = [
-  <>Inbound demand already exists — but the path from inquiry to action is complex and inconsistent.</>,
+  <>Inbound demand already exists, but the path from inquiry to action is complex and inconsistent.</>,
   <>Missed or weak phone handling isn't just a sales issue; it directly impacts service, parts, and customer retention.</>,
   <>In equipment dealerships, <strong>one missed call</strong> can mean a lost repair order, parts sale, or machine-down customer.</>,
 ];
