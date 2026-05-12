@@ -42,6 +42,7 @@ const Backend = () => {
   const { ref: headerRef, isInView: headerInView } = useScrollAnimation();
   const { ref: featuresRef, isInView: featuresInView } = useScrollAnimation();
   const { ref: imageRef, isInView: imageInView } = useScrollAnimation();
+  const { ref: postQuantumRef, isInView: postQuantumInView } = useScrollAnimation();
   const { ref: comingRef, isInView: comingInView } = useScrollAnimation();
 
   return (
@@ -110,6 +111,20 @@ const Backend = () => {
             />
           </motion.div>
         </div>
+
+        <motion.div
+          ref={postQuantumRef}
+          className="backend-postquantum"
+          initial={{ opacity: 0, y: 20 }}
+          animate={postQuantumInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as const }}
+        >
+          <img
+            src="/images/postquantumicon.png"
+            alt="Post-quantum security compliant"
+            loading="lazy"
+          />
+        </motion.div>
 
         <motion.div
           ref={comingRef}

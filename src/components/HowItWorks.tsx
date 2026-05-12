@@ -45,7 +45,7 @@ const HowItWorks = () => {
           animate={contentInView ? 'visible' : 'hidden'}
         >
           <motion.h2 className="how-it-works-title" variants={textItemVariants}>
-            From the moment a customer reaches out — until the work hits{' '}
+            From the moment a customer reaches out, until the work hits{' '}
             <span className="highlight">the right team.</span>
           </motion.h2>
 
