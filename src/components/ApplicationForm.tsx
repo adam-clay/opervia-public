@@ -121,7 +121,7 @@ const ApplicationForm = () => {
     <>
       <h2>Join the Team.</h2>
       <p className="contact-subtitle">
-        Apply for an internship at <span className="brand">OPERVIA</span>.
+        Internship applications at <span className="brand">OPERVIA</span> are currently closed. Submissions are still welcome and will be reviewed for future openings.
       </p>
 
       <motion.form
