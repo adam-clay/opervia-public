@@ -6,6 +6,7 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import { MarketingAgentWidget } from './components/MarketingAgent/MarketingAgentChat';
 import './App.scss';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/terms-of-service" element={<TermsOfService />} />
         </Routes>
         <Footer />
+        <MarketingAgentWidget />
         <div className="noise-overlay" />
       </div>
     </Router>
