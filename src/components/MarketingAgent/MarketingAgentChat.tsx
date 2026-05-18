@@ -229,9 +229,11 @@ const MarketingAgentChat: React.FC<{ primaryColor?: string }> = ({
           type="button"
           aria-label="Open chat"
         >
-          <span className="agent-chat__trigger-icon">
-            <ChatIcon size={28} />
-          </span>
+          <img
+            className="agent-chat__trigger-icon"
+            src="/images/opervia-icon-icononly.png"
+            alt="Opervia"
+          />
           <span className="agent-chat__trigger-text">How can I help?</span>
         </button>
       )}

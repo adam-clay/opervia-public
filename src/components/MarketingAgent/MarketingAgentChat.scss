@@ -47,7 +47,7 @@ button.agent-chat__trigger {
   width: 28px;
   height: 28px;
   flex-shrink: 0;
-  color: $agent-primary;
+  object-fit: contain;
 }
 
 .agent-chat__trigger-text {
