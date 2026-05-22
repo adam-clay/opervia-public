@@ -32,6 +32,11 @@
   &-group {
     margin-bottom: 4rem;
 
+    & + & {
+      padding-top: 4rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
     &-label {
       text-align: center;
       font-family: $font-body;
@@ -124,6 +129,10 @@
 
     &-group {
       margin-bottom: 3rem;
+
+      & + & {
+        padding-top: 3rem;
+      }
     }
 
     &-grid {

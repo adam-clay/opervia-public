@@ -7,7 +7,8 @@ import './Pricing.scss';
 const plans = [
   {
     name: 'Basic',
-    price: 'FREE',
+    monthlyPrice: '$99',
+    annualPrice: '$83',
     features: [
       'Simple Service Form',
       'Simple Scheduling',
@@ -18,7 +19,7 @@ const plans = [
   {
     name: 'Essential',
     monthlyPrice: '$299',
-    annualPrice: '$240',
+    annualPrice: '$249',
     features: [
       'Smart Service Request Form',
       'Multi-Year Agreements',
@@ -34,7 +35,7 @@ const plans = [
   {
     name: 'Professional AI',
     monthlyPrice: '$599',
-    annualPrice: '$479',
+    annualPrice: '$499',
     popular: true,
     features: [
       'Smart Service Request Form',
@@ -55,7 +56,7 @@ const plans = [
   {
     name: 'Advanced AI',
     monthlyPrice: '$899',
-    annualPrice: '$720',
+    annualPrice: '$749',
     features: [
       'Smart Service Request Form',
       'Multi-Year Agreements',
@@ -111,7 +112,7 @@ const Pricing = () => {
         transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as const }}
       >
         <h2>Simple, Transparent Pricing</h2>
-        <p>Start free. Scale as you grow. No hidden fees.</p>
+        <p>Scale as you grow. No hidden fees.</p>
       </motion.div>
 
       <div className="pricing-toggle" role="tablist" aria-label="Billing period">
@@ -131,7 +132,7 @@ const Pricing = () => {
           className={`pricing-toggle-option ${isAnnual ? 'active' : ''}`}
           onClick={() => setIsAnnual(true)}
         >
-          Annual <span className="save">SAVE 20%</span>
+          Annual <span className="save">2 MONTHS FREE</span>
         </button>
       </div>
 
@@ -157,15 +158,11 @@ const Pricing = () => {
             </div>
 
             <div className="card-pricing">
-              {plan.price ? (
-                <div className="price-free">{plan.price}</div>
-              ) : (
-                <div className="price-option">
-                  <div className="price-label">{isAnnual ? 'Annual' : 'Monthly'}</div>
-                  <div className="price-amount">{isAnnual ? plan.annualPrice : plan.monthlyPrice}</div>
-                  <div className="price-period">per month/per location</div>
-                </div>
-              )}
+              <div className="price-option">
+                <div className="price-label">{isAnnual ? 'Annual' : 'Monthly'}</div>
+                <div className="price-amount">{isAnnual ? plan.annualPrice : plan.monthlyPrice}</div>
+                <div className="price-period">per month/per location</div>
+              </div>
             </div>
 
             <div className="card-features">
