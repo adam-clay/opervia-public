@@ -1,0 +1,12 @@
+# Opervia Public Site — Netlify configuration.
+# Build is auto-detected (Vite → `npm run build` → publish `dist/`); this file only adds
+# security headers. Do NOT pin NODE_VERSION here — Vite 7 requires Node 20+.
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), camera=(), microphone=(), payment=()"

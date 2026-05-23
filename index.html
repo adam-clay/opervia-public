@@ -1,6 +1,26 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) — loaded only on the live site (skips localhost & Netlify previews) -->
+    <script>
+      (function () {
+        var host = location.hostname;
+        // Don't pollute analytics with local dev or *.netlify.app preview/branch deploys.
+        if (host === 'localhost' || host === '127.0.0.1' || host.endsWith('.netlify.app')) return;
+
+        var GA_ID = 'G-EXW4QVKLVT';
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(s);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', GA_ID);
+      })();
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
