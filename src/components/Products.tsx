@@ -53,6 +53,19 @@ const products: Product[] = [
     image: '/images/parttexting.png',
     imageAlt: 'A customer in the field texts a photo of a tractor part; the AI replies with the part identified, price, and pickup details',
   },
+  {
+    eyebrow: 'Live Call Assistance',
+    name: 'AI-Enabled CallCoach',
+    description:
+      'Opervia’s CallCoach brings inbound phone calls directly into the Opervia platform, giving employees real-time support throughout every conversation. As the call is transcribed, CallCoach recognizes the customer’s needs and surfaces tailored discovery questions, relevant customer and equipment information, dealership policies, procedures, programs, and other critical data—helping every employee respond faster, capture complete information, and deliver expert-level service.',
+    highlights: [
+      'Call Support',
+      'Automated Data Surfacing',
+      'Quality Discovery',
+    ],
+    image: '/images/callcoach.png',
+    imageAlt: 'An employee wearing a headset takes a live call while Opervia CallCoach transcribes the conversation and surfaces the next discovery questions',
+  },
 ];
 
 const ProductRow = ({ product, index }: { product: Product; index: number }) => {
@@ -103,7 +116,7 @@ const Products = () => {
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as const }}
         >
           <h2 className="products-title">
-            Three Products. <span className="highlight">One Workflow.</span>
+            Four Products. <span className="highlight">One Workflow.</span>
           </h2>
           <p className="products-subtitle">
             Built for how customers actually reach equipment dealerships today, and the realities of running a service department, parts counter, or sales floor.

@@ -75,6 +75,7 @@ const plans = [
       'Smart Parts Texting (AI Photo ID)',
       'Parts OnSite Management System',
       'AI Voice Assistant',
+      'AI CallCoach (Live Call Assistance)',
     ]
   }
 ];
