@@ -1,0 +1,281 @@
+@use '../styles/variables' as *;
+
+.award-page {
+  background: white;
+
+  a:focus-visible {
+    outline: 3px solid rgba($green-400, 0.7);
+    outline-offset: 3px;
+  }
+}
+
+.award-hero {
+  position: relative;
+  background: linear-gradient(160deg, $blue-900 0%, $blue-800 60%, $blue-700 100%);
+  color: white;
+  padding: 10rem 2rem 5rem;
+  text-align: center;
+  overflow: hidden;
+
+  &-glow {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(60rem, 95vw);
+    aspect-ratio: 2 / 1;
+    background: radial-gradient(
+      ellipse at center,
+      rgba($green-400, 0.13) 0%,
+      rgba(0, 150, 255, 0.08) 45%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  &-content {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+.award-eyebrow {
+  font-family: $font-body;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: $green-400;
+  margin-bottom: 2.25rem;
+}
+
+.award-badge {
+  width: min(100%, 540px);
+  height: auto;
+  margin-bottom: 2.5rem;
+  filter: drop-shadow(0 8px 40px rgba(0, 0, 0, 0.35));
+}
+
+.award-title {
+  font-family: $font-display;
+  font-size: clamp(2rem, 4.5vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
+}
+
+.award-deck {
+  font-family: $font-body;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.award-article {
+  padding: 4rem 2rem 5rem;
+
+  &-container {
+    max-width: 760px;
+    margin: 0 auto;
+
+    p {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 1.75rem;
+    }
+
+    .award-lede {
+      font-size: 1.3rem;
+      line-height: 1.7;
+      font-weight: 500;
+      color: $text-primary;
+    }
+  }
+}
+
+.award-quote {
+  margin: 3rem 0;
+  padding-left: 2rem;
+  border-left: 4px solid $green-500;
+
+  p {
+    font-size: 1.35rem;
+    line-height: 1.6;
+    font-weight: 500;
+    color: $blue-800;
+    margin-bottom: 1.25rem;
+  }
+
+  cite {
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $text-secondary;
+  }
+}
+
+.award-social {
+  margin-top: 4.5rem;
+  padding-top: 3.5rem;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: $blue-800;
+    margin-bottom: 0.75rem;
+  }
+
+  > p {
+    font-size: 1.05rem;
+    color: $text-secondary;
+    margin-bottom: 2rem;
+  }
+
+  &-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.9rem 1.6rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: white;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $blue-800;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+
+    svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    &.facebook svg {
+      color: #1877f2;
+    }
+
+    &.linkedin svg {
+      color: #0a66c2;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      border-color: rgba($green-500, 0.4);
+      box-shadow: 0 10px 30px rgba(19, 47, 76, 0.12);
+    }
+
+    @include reduced-motion {
+      transition: none;
+
+      &:hover {
+        transform: none;
+      }
+    }
+  }
+}
+
+.award-cta {
+  background: $blue-700;
+  color: white;
+  text-align: center;
+  padding: 4.5rem 2rem 5.5rem;
+
+  h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 2.25rem;
+  }
+
+  &-btn {
+    display: inline-block;
+    background: $green-500;
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    box-shadow: 0 8px 30px rgba(22, 175, 0, 0.3);
+    transition: all 0.3s;
+
+    &:hover {
+      background: $green-hover;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(22, 175, 0, 0.45);
+    }
+
+    @include reduced-motion {
+      transition: none;
+
+      &:hover {
+        transform: none;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .award-hero {
+    padding: 8rem 1.25rem 3.5rem;
+  }
+
+  .award-article {
+    padding: 3rem 1.25rem 4rem;
+
+    &-container {
+      p {
+        font-size: 1.05rem;
+      }
+
+      .award-lede {
+        font-size: 1.15rem;
+      }
+    }
+  }
+
+  .award-quote {
+    padding-left: 1.25rem;
+
+    p {
+      font-size: 1.15rem;
+    }
+  }
+
+  .award-social-links {
+    flex-direction: column;
+    align-items: stretch;
+
+    .award-social-link {
+      justify-content: center;
+    }
+  }
+
+  .award-cta {
+    padding: 3.5rem 1.25rem 4.5rem;
+  }
+}

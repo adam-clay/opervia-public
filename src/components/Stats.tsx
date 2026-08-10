@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import CountUp from './CountUp';
 import AmbientShapes from './AmbientShapes';
@@ -49,6 +50,7 @@ const Stats = () => {
   const { ref: phoneRef, isInView: phoneInView } = useScrollAnimation();
   const { ref: internetRef, isInView: internetInView } = useScrollAnimation();
   const { ref: punchRef, isInView: punchInView } = useScrollAnimation();
+  const { ref: awardRef, isInView: awardInView } = useScrollAnimation();
 
   return (
     <section id="stats" className="stats">
@@ -122,6 +124,25 @@ const Stats = () => {
               {line}
             </motion.p>
           ))}
+        </motion.div>
+
+        <motion.div
+          ref={awardRef}
+          className="stats-award"
+          initial={{ opacity: 0, y: 30 }}
+          animate={awardInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as const }}
+        >
+          <h3 className="stats-award-title">
+            Here&rsquo;s who <span className="highlight">dealers picked</span> to fix it.
+          </h3>
+          <Link to="/shark-tank" className="stats-award-link">
+            <img
+              src="/images/dms-award.png"
+              alt="Farm Equipment Dealership Minds Summit 2026 — 2026 Award Winner, Dealership Shark Tank Session"
+            />
+            <span className="stats-award-caption">Read the announcement →</span>
+          </Link>
         </motion.div>
 
         <p className="stats-sources">

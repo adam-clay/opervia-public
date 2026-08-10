@@ -4,6 +4,7 @@ import Home from './components/Home';
 import SMSTerms from './components/SMSTerms';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
+import AwardPage from './components/AwardPage';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import { MarketingAgentWidget } from './components/MarketingAgent/MarketingAgentChat';
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/apply" element={<Home />} />
+          <Route path="/shark-tank" element={<AwardPage />} />
           <Route path="/sms-terms" element={<SMSTerms />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
