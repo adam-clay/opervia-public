@@ -146,7 +146,7 @@ const AwardPage = () => {
       <section className="award-cta">
         <h2>See what dealership leaders voted for.</h2>
         <p>Get a firsthand look at the platform that won the room.</p>
-        <Link to="/apply" className="award-cta-btn">
+        <Link to="/" state={{ scrollTo: 'contact' }} className="award-cta-btn">
           Get Demo
         </Link>
       </section>
