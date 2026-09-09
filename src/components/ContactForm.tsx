@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 
 const formRowVariants = {
@@ -17,17 +17,65 @@ const formContainerVariants = {
   },
 };
 
+// Cloudflare Turnstile site key (public). Set VITE_TURNSTILE_SITE_KEY in the
+// Netlify production context. Without it no widget renders and no token is
+// sent; the notifier skips its check while TURNSTILE_SECRET_KEY is unset too.
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined;
+const TURNSTILE_SCRIPT = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (el: HTMLElement, opts: Record<string, unknown>) => string;
+      reset: (id: string) => void;
+      remove: (id: string) => void;
+    };
+  }
+}
+
+const emptyForm = {
+  name: '',
+  dealershipName: '',
+  locations: '',
+  phone: '',
+  email: '',
+  message: '',
+  website: '', // honeypot — hidden from real users, must stay empty
+};
+
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    dealershipName: '',
-    locations: '',
-    phone: '',
-    email: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState(emptyForm);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [turnstileToken, setTurnstileToken] = useState('');
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  const turnstileId = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!TURNSTILE_SITE_KEY) return;
+    let widgetId: string | null = null;
+    const render = () => {
+      if (!turnstileRef.current || !window.turnstile) return;
+      widgetId = window.turnstile.render(turnstileRef.current, {
+        sitekey: TURNSTILE_SITE_KEY,
+        theme: 'light',
+        appearance: 'interaction-only',
+        callback: (token: string) => setTurnstileToken(token),
+        'expired-callback': () => setTurnstileToken(''),
+      });
+      turnstileId.current = widgetId;
+    };
+    const script =
+      document.querySelector<HTMLScriptElement>(`script[src="${TURNSTILE_SCRIPT}"]`) ??
+      Object.assign(document.createElement('script'), { src: TURNSTILE_SCRIPT, async: true });
+    if (!script.isConnected) document.head.appendChild(script);
+    if (window.turnstile) render();
+    else script.addEventListener('load', render);
+    return () => {
+      script.removeEventListener('load', render);
+      if (widgetId) window.turnstile?.remove(widgetId);
+    };
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -49,19 +97,12 @@ const ContactForm = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, turnstileToken }),
       });
 
       if (response.ok) {
         setSubmitStatus('success');
-        setFormData({
-          name: '',
-          dealershipName: '',
-          locations: '',
-          phone: '',
-          email: '',
-          message: ''
-        });
+        setFormData(emptyForm);
       } else {
         setSubmitStatus('error');
       }
@@ -70,6 +111,9 @@ const ContactForm = () => {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
+      // Turnstile tokens are single-use; get a fresh one for the next attempt.
+      if (turnstileId.current) window.turnstile?.reset(turnstileId.current);
+      setTurnstileToken('');
     }
   };
 
@@ -187,6 +231,23 @@ const ContactForm = () => {
             />
           </div>
         </motion.div>
+
+        {/* Honeypot — hidden from people, tempting to bots. The server drops any submission that fills it. */}
+        <div style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true">
+          <label htmlFor="website">Website</label>
+          <input
+            type="text"
+            id="website"
+            name="website"
+            value={formData.website}
+            onChange={handleChange}
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
+
+        {/* Turnstile mounts here; interaction-only appearance keeps it invisible unless a challenge is needed. */}
+        {TURNSTILE_SITE_KEY && <div ref={turnstileRef} className="turnstile" />}
 
         <motion.button
           type="submit"
