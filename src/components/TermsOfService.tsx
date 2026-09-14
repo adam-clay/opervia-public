@@ -12,9 +12,10 @@ const TermsOfService = () => {
           </p>
 
           <p className="intro-text">
-            These Terms of Service ("Terms") govern your use of Opervia's website, software, and related
-            services (the "Services"). By accessing or using the Services, you agree to these Terms. If you
-            do not agree, you may not use Opervia.
+            These Terms of Service ("Terms") are an agreement between you and Opervia, LLC ("Opervia") and
+            govern your use of Opervia's website, software, and related services (the "Services"). By
+            accessing or using the Services, you agree to these Terms. If you do not agree, you may not
+            use Opervia.
           </p>
 
           <section className="legal-section">
