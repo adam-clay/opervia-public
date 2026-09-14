@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
           </p>
 
           <p className="intro-text">
-            At Opervia, we respect your privacy and are committed to protecting the personal information
+            At Opervia, LLC ("Opervia"), we respect your privacy and are committed to protecting the personal information
             you share with us. This Privacy Policy explains how we collect, use, and safeguard information
             when you use our website, software, and related services (collectively, the "Services").
           </p>

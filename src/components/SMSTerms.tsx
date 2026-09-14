@@ -9,7 +9,7 @@ const SMSTerms = () => {
         <section className="sms-section">
           <h2>SMS Program Overview</h2>
           <p>
-            Opervia powers SMS communications on behalf of equipment dealerships and
+            Opervia, LLC ("Opervia") powers SMS communications on behalf of equipment dealerships and
             service providers. Opervia operates two distinct SMS messaging services,
             each with its own opt-in process. By opting in to either service,
             you agree to receive recurring automated messages at the mobile
