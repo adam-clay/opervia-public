@@ -18,12 +18,6 @@ const itemVariants = {
   },
 };
 
-// Mirrors the Organization.founder JSON-LD in index.html — keep both in sync.
-const FOUNDERS = [
-  { name: 'Adam Clay', role: 'Co-Founder & Lead Developer', linkedin: 'https://www.linkedin.com/in/adam-c-b332ba266/' },
-  { name: 'Mark Reid', role: 'Co-Founder', linkedin: 'https://www.linkedin.com/in/markjreidjr/' },
-];
-
 const About = () => {
   const { ref: imageRef, isInView: imageInView } = useScrollAnimation();
   const { ref: contentRef, isInView: contentInView } = useScrollAnimation();
@@ -69,21 +63,6 @@ const About = () => {
             missed calls into closed work orders and scattered leads
             into structured opportunity.
           </motion.p>
-
-          <motion.div className="about-founders" variants={itemVariants}>
-            <h3 className="about-founders-title">Founded by</h3>
-            <ul className="about-founders-list">
-              {FOUNDERS.map((f) => (
-                <li key={f.name}>
-                  <a href={f.linkedin} target="_blank" rel="noopener" className="about-founder">
-                    <span className="about-founder-name">{f.name}</span>
-                    <span className="about-founder-role">{f.role}</span>
-                    <span className="about-founder-link">LinkedIn &rarr;</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
         </motion.div>
       </div>
     </section>

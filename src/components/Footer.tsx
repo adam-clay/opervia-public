@@ -59,6 +59,13 @@ const Footer = () => {
             <p>
               <a href="tel:+18669422750">(866) 942-2750</a>
             </p>
+
+            {/* Mirrors the Organization.founder JSON-LD in index.html — keep both in sync. */}
+            <h3>Founders</h3>
+            <p>
+              <a href="https://www.linkedin.com/in/adam-c-b332ba266/" target="_blank" rel="noopener">Adam Clay</a>, Co-Founder &amp; Lead Developer<br/>
+              <a href="https://www.linkedin.com/in/markjreidjr/" target="_blank" rel="noopener">Mark Reid</a>, Co-Founder
+            </p>
           </div>
 
           <div className="footer-column footer-newsletter">
